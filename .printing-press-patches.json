@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "applied_at": "2026-07-07",
+  "base_run_id": "2026-07-07T13:18:17.142451282Z",
+  "base_printing_press_version": "4.5.2",
+  "patches": [
+    {
+      "id": "activities-workflows",
+      "summary": "Added Exact Online Activities resource discovery and compound read workflows.",
+      "reason": "The user requested all commands plus out-of-the-box workflows for Activities; generated endpoint wrappers alone did not include cross-resource Activities overviews or docs/resource discovery.",
+      "files": [
+        "internal/cli/activities.go",
+        "internal/cli/activities_workflows.go"
+      ],
+      "validated_outcome": "go test ./... passes; activities resources/docs/overview/open-items/by-account appear in help; resources/docs commands return JSON."
+    },
+    {
+      "id": "remove-dead-helper",
+      "summary": "Removed unused generated extractResponseData helper after polish/dogfood flagged it as dead code.",
+      "reason": "printing-press polish restored the helper because RootCmd was a false-positive dependency; a direct usage search showed extractResponseData was genuinely unused.",
+      "files": [
+        "internal/cli/helpers.go"
+      ],
+      "validated_outcome": "go test ./... and printing-press dogfood pass without dead-function warnings."
+    }
+  ]
+}

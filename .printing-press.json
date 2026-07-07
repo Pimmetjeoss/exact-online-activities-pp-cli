@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-07T13:18:17.142451282Z",
+  "printing_press_version": "4.5.2",
+  "api_name": "exact-online-activities",
+  "display_name": "Exact Online Activities",
+  "cli_name": "exact-online-activities-pp-cli",
+  "owner": "pimmetjeoss",
+  "printer": "Pimmetjeoss",
+  "printer_name": "Pimmetjeoss",
+  "spec_url": "https://start.exactonline.nl/docs/HlpRestAPIResources.aspx?SourceAction=10",
+  "spec_path": "/home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-openapi.yaml",
+  "spec_format": "openapi3",
+  "spec_checksum": "sha256:e18a75ce8e077ea9b0946b9c472cff310b50fad35450daf25fb5cae7bf2ee7a7",
+  "mcp_binary": "exact-online-activities-pp-mcp",
+  "mcp_tool_count": 16,
+  "mcp_ready": "full",
+  "api_version": "1.0.0",
+  "auth_type": "bearer_token",
+  "auth_env_vars": [
+    "EXACT_ONLINE_ACTIVITIES_OAUTH2"
+  ]
+}

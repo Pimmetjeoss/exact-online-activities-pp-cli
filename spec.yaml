@@ -1,0 +1,1559 @@
+openapi: 3.0.3
+info:
+  title: Exact Online Activities API
+  version: 1.0.0
+  description: Activities-only Exact Online REST/OData API surface generated from
+    the official Exact Online REST API documentation. Covers the Activities service
+    resources and all documented methods. OAuth bearer token required.
+servers:
+- url: https://start.exactonline.nl
+  description: Exact Online Netherlands (start.exactonline.nl)
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://start.exactonline.nl/api/oauth2/auth
+          tokenUrl: https://start.exactonline.nl/api/oauth2/token
+          scopes:
+            activities: Organization workflow
+  schemas:
+    ActivitiesAnnualStatements:
+      type: object
+      additionalProperties: true
+      properties:
+        ID:
+          type: string
+          description: The Primary key
+        ActionDate:
+          type: string
+          description: The date indicating by when the action has to be taken
+        AnnualStatementStatus:
+          type: string
+          description: The status of the Annual Statement request
+        AnnualStatementStatusRemark:
+          type: string
+          description: The remark of the Annual Statement request status
+        AssignedTo:
+          type: string
+          description: The user that the request is assigned to
+        AssignedToFullName:
+          type: string
+          description: The user name
+        Created:
+          type: string
+          description: Creation date
+        Creator:
+          type: string
+          description: User ID of the creator
+        CreatorFullName:
+          type: string
+          description: Name of the creator
+        Description:
+          type: string
+          description: The description
+        Division:
+          type: integer
+          description: The division
+        HID:
+          type: integer
+          description: The human readable key
+        Message:
+          type: string
+          description: The message content of the Annual Statement request
+        Modified:
+          type: string
+          description: Last modified date
+        Modifier:
+          type: string
+          description: User ID of the last modifier
+        ModifierFullName:
+          type: string
+          description: Name of the last modifier
+        MyFirmUserEmail:
+          type: string
+          description: The email of MyFirm user
+        Status:
+          type: integer
+          description: 'Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30
+            = Approved, 40 = Realized, 50 = Processed'
+        StatusDescription:
+          type: string
+          description: The description of the status
+        Type:
+          type: string
+          description: The message content of the Annual Statement request
+        Url:
+          type: string
+          description: The URL back to Annual Statement
+    ActivitiesCommunicationNotes:
+      type: object
+      additionalProperties: true
+      properties:
+        ID:
+          type: string
+          description: The Primary key
+        Account:
+          type: string
+          description: The account that is related to the communication note
+        AccountName:
+          type: string
+          description: The name of the account
+        Attachments:
+          type: string
+          description: Attachments linked to the communication note
+        Campaign:
+          type: string
+          description: The campaign linked to the communication note
+        CampaignDescription:
+          type: string
+          description: Description of the campaign
+        Contact:
+          type: string
+          description: The contact person that is related to the communication note
+        ContactFullName:
+          type: string
+          description: The name of the contact person
+        Created:
+          type: string
+          description: Creation date
+        Creator:
+          type: string
+          description: User ID of the creator
+        CreatorFullName:
+          type: string
+          description: Name of the creator
+        Date:
+          type: string
+          description: The date
+        Division:
+          type: integer
+          description: The division
+        Document:
+          type: string
+          description: The document that is linked to the communication note
+        DocumentSubject:
+          type: string
+          description: The subject of the document
+        HID:
+          type: integer
+          description: The human readable key
+        Modified:
+          type: string
+          description: Last modified date
+        Modifier:
+          type: string
+          description: User ID of the last modifier
+        ModifierFullName:
+          type: string
+          description: Name of the last modifier
+        Notes:
+          type: string
+          description: The notes of the communication note
+        Opportunity:
+          type: string
+          description: The opportunity linked to the communication note
+        OpportunityName:
+          type: string
+          description: The name of the opportunity
+        Status:
+          type: integer
+          description: 'Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30
+            = Approved, 40 = Realized, 50 = Processed'
+        StatusDescription:
+          type: string
+          description: The description of the status
+        Subject:
+          type: string
+          description: A short description of the communication note
+        User:
+          type: string
+          description: The user that the communication note is assigned to
+        UserFullName:
+          type: string
+          description: The user name
+    ActivitiesComplaints:
+      type: object
+      additionalProperties: true
+      properties:
+        ID:
+          type: string
+          description: The Primary key
+        Account:
+          type: string
+          description: The account that is related to the complaint
+        AccountName:
+          type: string
+          description: The name of the account
+        AssignedTo:
+          type: string
+          description: The user that the complaint is assigned to
+        AssignedToFullName:
+          type: string
+          description: The user name
+        Attachments:
+          type: string
+          description: Attachments linked to the complaint
+        Complaint:
+          type: string
+          description: A short description of the complaint
+        Contact:
+          type: string
+          description: The contact person that is related to the complaint
+        ContactFullName:
+          type: string
+          description: The name of the contact person
+        Created:
+          type: string
+          description: Creation date
+        Creator:
+          type: string
+          description: User ID of the creator
+        CreatorFullName:
+          type: string
+          description: Name of the creator
+        Division:
+          type: integer
+          description: The division
+        Document:
+          type: string
+          description: The document that is linked to the complaint
+        DocumentSubject:
+          type: string
+          description: The subject of the document
+        HID:
+          type: integer
+          description: The human readable key
+        Modified:
+          type: string
+          description: Last modified date
+        Modifier:
+          type: string
+          description: User ID of the last modifier
+        ModifierFullName:
+          type: string
+          description: Name of the last modifier
+        NextAction:
+          type: string
+          description: The date indicating by when the next action has to be taken
+        Notes:
+          type: string
+          description: The notes of the complaint
+        ReceiptDate:
+          type: string
+          description: The date the complaint was received
+        Status:
+          type: integer
+          description: 'Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30
+            = Approved, 40 = Realized, 50 = Processed'
+        StatusDescription:
+          type: string
+          description: The description of the status
+    ActivitiesEvents:
+      type: object
+      additionalProperties: true
+      properties:
+        ID:
+          type: string
+          description: The Primary key
+        Account:
+          type: string
+          description: The account that is related to the event
+        AccountName:
+          type: string
+          description: The name of the account
+        Attachments:
+          type: string
+          description: Attachments linked to the event
+        Campaign:
+          type: string
+          description: The campaign linked to the event
+        CampaignDescription:
+          type: string
+          description: Description of the campaign
+        Contact:
+          type: string
+          description: The contact person that is related to the event
+        ContactFullName:
+          type: string
+          description: The name of the contact person
+        Created:
+          type: string
+          description: Creation date
+        Creator:
+          type: string
+          description: User ID of the creator
+        CreatorFullName:
+          type: string
+          description: Name of the creator
+        Description:
+          type: string
+          description: The description
+        Division:
+          type: integer
+          description: The division
+        Document:
+          type: string
+          description: The document that is linked to the event
+        DocumentSubject:
+          type: string
+          description: The subject of the document
+        EndDate:
+          type: string
+          description: The end date and time
+        HID:
+          type: integer
+          description: The human readable key
+        Modified:
+          type: string
+          description: Last modified date
+        Modifier:
+          type: string
+          description: User ID of the last modifier
+        ModifierFullName:
+          type: string
+          description: Name of the last modifier
+        Notes:
+          type: string
+          description: The notes of the event
+        Opportunity:
+          type: string
+          description: The opportunity linked to the event
+        OpportunityName:
+          type: string
+          description: The name of the opportunity
+        Project:
+          type: string
+          description: The project linked to the event
+        ProjectDescription:
+          type: string
+          description: The description of the project
+        StartDate:
+          type: string
+          description: The start date and time
+        Status:
+          type: integer
+          description: 'Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30
+            = Approved, 40 = Realized, 50 = Processed'
+        StatusDescription:
+          type: string
+          description: The description of the status
+        User:
+          type: string
+          description: The user that has the event
+        UserFullName:
+          type: string
+          description: The user name
+    ActivitiesFiscals:
+      type: object
+      additionalProperties: true
+      properties:
+        ID:
+          type: string
+          description: The Primary key
+        ActionDate:
+          type: string
+          description: The date indicating by when the action has to be taken
+        AssignedTo:
+          type: string
+          description: The user that the request is assigned to
+        AssignedToFullName:
+          type: string
+          description: The user name
+        Created:
+          type: string
+          description: Creation date
+        Creator:
+          type: string
+          description: User ID of the creator
+        CreatorFullName:
+          type: string
+          description: Name of the creator
+        Description:
+          type: string
+          description: The description
+        Division:
+          type: integer
+          description: The division
+        FiscalStatus:
+          type: string
+          description: The status of the Fiscal request
+        FiscalStatusRemark:
+          type: string
+          description: The remark of the Fiscal request status
+        HID:
+          type: integer
+          description: The human readable key
+        Message:
+          type: string
+          description: The message content of the Fiscal request
+        Modified:
+          type: string
+          description: Last modified date
+        Modifier:
+          type: string
+          description: User ID of the last modifier
+        ModifierFullName:
+          type: string
+          description: Name of the last modifier
+        MyFirmUserEmail:
+          type: string
+          description: The email of MyFirm user
+        Status:
+          type: integer
+          description: 'Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30
+            = Approved, 40 = Realized, 50 = Processed'
+        StatusDescription:
+          type: string
+          description: The description of the status
+        Type:
+          type: string
+          description: The message content of the Fiscal request
+        Url:
+          type: string
+          description: The URL back to Fiscal
+    ActivitiesServiceRequests:
+      type: object
+      additionalProperties: true
+      properties:
+        ID:
+          type: string
+          description: The Primary key
+        Account:
+          type: string
+          description: The account that is related to the service request
+        AccountName:
+          type: string
+          description: The name of the account
+        AssignedTo:
+          type: string
+          description: The user that the service request is assigned to
+        AssignedToFullName:
+          type: string
+          description: The user name
+        Attachments:
+          type: string
+          description: Attachments linked to the service request
+        Contact:
+          type: string
+          description: The contact person that is related to the service request
+        ContactFullName:
+          type: string
+          description: The name of the contact person
+        Created:
+          type: string
+          description: Creation date
+        Creator:
+          type: string
+          description: User ID of the creator
+        CreatorFullName:
+          type: string
+          description: Name of the creator
+        Description:
+          type: string
+          description: The description
+        Division:
+          type: integer
+          description: The division
+        Document:
+          type: string
+          description: The document that is linked to the service request
+        DocumentSubject:
+          type: string
+          description: The subject of the document
+        HID:
+          type: integer
+          description: The human readable key
+        Modified:
+          type: string
+          description: Last modified date
+        Modifier:
+          type: string
+          description: User ID of the last modifier
+        ModifierFullName:
+          type: string
+          description: Name of the last modifier
+        NextAction:
+          type: string
+          description: The date indicating by when the next action has to be taken
+        Notes:
+          type: string
+          description: The notes of the service request
+        ReceiptDate:
+          type: string
+          description: The date the service request was received
+        Status:
+          type: integer
+          description: 'Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30
+            = Approved, 40 = Realized, 50 = Processed'
+        StatusDescription:
+          type: string
+          description: The description of the status
+    ActivitiesTasks:
+      type: object
+      additionalProperties: true
+      properties:
+        ID:
+          type: string
+          description: The Primary key
+        Account:
+          type: string
+          description: The account that is related to the task
+        AccountName:
+          type: string
+          description: The name of the account
+        ActionDate:
+          type: string
+          description: The end date by which the task has to be realized
+        Attachments:
+          type: string
+          description: Attachments linked to the task
+        Contact:
+          type: string
+          description: The contact person that is related to the task
+        ContactFullName:
+          type: string
+          description: The name of the contact person
+        Created:
+          type: string
+          description: Creation date
+        Creator:
+          type: string
+          description: User ID of the creator
+        CreatorFullName:
+          type: string
+          description: Name of the creator
+        CustomTaskType:
+          type: string
+          description: Custom type of the task. If both TaskType and CustomTaskType
+            are specified then TaskType is preferred. This value is write-only.
+        Description:
+          type: string
+          description: The description of the task
+        Division:
+          type: integer
+          description: The division of the task
+        Document:
+          type: string
+          description: The document that is linked to the task
+        DocumentSubject:
+          type: string
+          description: The subject of the document
+        Employee:
+          type: string
+          description: 'The employee that is linked to the task. Note : For POST/PUT:
+            This field value is only used when the "Employees" featureset is enabled.
+            For GET: To see the field value required "Employee" featureset. Otherwise,
+            the field always return NULL value.'
+        HID:
+          type: integer
+          description: The human readable key
+        Modified:
+          type: string
+          description: Last modified date
+        Modifier:
+          type: string
+          description: User ID of the last modifier
+        ModifierFullName:
+          type: string
+          description: Name of the last modifier
+        Notes:
+          type: string
+          description: The notes of the task
+        Opportunity:
+          type: string
+          description: The opportunity linked to the task
+        OpportunityName:
+          type: string
+          description: The name of the opportunity
+        Project:
+          type: string
+          description: The project linked to the task
+        ProjectDescription:
+          type: string
+          description: The description of the project
+        Status:
+          type: integer
+          description: 'Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30
+            = Approved, 40 = Realized, 50 = Processed'
+        StatusDescription:
+          type: string
+          description: The description of the status
+        TaskType:
+          type: integer
+          description: The type of the task. This value is write-only.0 = Other (default),
+            1 = Call, 2 = Request for information, 3 = Investigate, 4 = Correspondence,
+            5 = Create an appointment, 6 = Create a quotation
+        TaskTypeDescription:
+          type: string
+          description: The description of the type of the task
+        User:
+          type: string
+          description: The user that has to realize the task
+        UserFullName:
+          type: string
+          description: The user name
+security:
+- oauth2:
+  - activities
+paths:
+  /api/v1/{division}/activities/AnnualStatements:
+    get:
+      operationId: AnnualStatements_get
+      summary: GET AnnualStatements
+      description: 'The date indicating by when the action has to be taken; The status
+        of the Annual Statement request.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesAnnualStatements
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - AnnualStatements
+      parameters: &id001
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema:
+          type: integer
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema:
+          type: string
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema:
+          type: string
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema:
+          type: string
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema:
+          type: integer
+          minimum: 1
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: AnnualStatements_post
+      summary: POST AnnualStatements
+      description: 'The date indicating by when the action has to be taken; The status
+        of the Annual Statement request.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesAnnualStatements
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - AnnualStatements
+      parameters: *id001
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivitiesAnnualStatements'
+    put:
+      operationId: AnnualStatements_put
+      summary: PUT AnnualStatements
+      description: 'The date indicating by when the action has to be taken; The status
+        of the Annual Statement request.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesAnnualStatements
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - AnnualStatements
+      parameters: *id001
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivitiesAnnualStatements'
+  /api/v1/{division}/activities/CommunicationNotes:
+    get:
+      operationId: CommunicationNotes_get
+      summary: GET CommunicationNotes
+      description: 'The account that is related to the communication note; The name
+        of the account.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesCommunicationNotes
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - CommunicationNotes
+      parameters: &id002
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema:
+          type: integer
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema:
+          type: string
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema:
+          type: string
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema:
+          type: string
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema:
+          type: integer
+          minimum: 1
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: CommunicationNotes_post
+      summary: POST CommunicationNotes
+      description: 'The account that is related to the communication note; The name
+        of the account.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesCommunicationNotes
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - CommunicationNotes
+      parameters: *id002
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivitiesCommunicationNotes'
+  /api/v1/{division}/activities/Complaints:
+    get:
+      operationId: Complaints_get
+      summary: GET Complaints
+      description: 'The account that is related to the complaint; The name of the
+        account.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesComplaints
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - Complaints
+      parameters: &id003
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema:
+          type: integer
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema:
+          type: string
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema:
+          type: string
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema:
+          type: string
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema:
+          type: integer
+          minimum: 1
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: Complaints_post
+      summary: POST Complaints
+      description: 'The account that is related to the complaint; The name of the
+        account.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesComplaints
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - Complaints
+      parameters: *id003
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivitiesComplaints'
+  /api/v1/{division}/activities/Events:
+    get:
+      operationId: Events_get
+      summary: GET Events
+      description: 'The account that is related to the event; The name of the account.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesEvents
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - Events
+      parameters: &id004
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema:
+          type: integer
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema:
+          type: string
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema:
+          type: string
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema:
+          type: string
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema:
+          type: integer
+          minimum: 1
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: Events_post
+      summary: POST Events
+      description: 'The account that is related to the event; The name of the account.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesEvents
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - Events
+      parameters: *id004
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivitiesEvents'
+  /api/v1/{division}/activities/Fiscals:
+    get:
+      operationId: Fiscals_get
+      summary: GET Fiscals
+      description: 'The date indicating by when the action has to be taken; The user
+        that the request is assigned to.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesFiscals
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - Fiscals
+      parameters: &id005
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema:
+          type: integer
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema:
+          type: string
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema:
+          type: string
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema:
+          type: string
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema:
+          type: integer
+          minimum: 1
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: Fiscals_post
+      summary: POST Fiscals
+      description: 'The date indicating by when the action has to be taken; The user
+        that the request is assigned to.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesFiscals
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - Fiscals
+      parameters: *id005
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivitiesFiscals'
+    put:
+      operationId: Fiscals_put
+      summary: PUT Fiscals
+      description: 'The date indicating by when the action has to be taken; The user
+        that the request is assigned to.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesFiscals
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - Fiscals
+      parameters: *id005
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivitiesFiscals'
+  /api/v1/{division}/activities/ServiceRequests:
+    get:
+      operationId: ServiceRequests_get
+      summary: GET ServiceRequests
+      description: 'The account that is related to the service request; The name of
+        the account.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesServiceRequests
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - ServiceRequests
+      parameters: &id006
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema:
+          type: integer
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema:
+          type: string
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema:
+          type: string
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema:
+          type: string
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema:
+          type: integer
+          minimum: 1
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: ServiceRequests_post
+      summary: POST ServiceRequests
+      description: 'The account that is related to the service request; The name of
+        the account.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesServiceRequests
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - ServiceRequests
+      parameters: *id006
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivitiesServiceRequests'
+  /api/v1/{division}/activities/Tasks:
+    get:
+      operationId: Tasks_get
+      summary: GET Tasks
+      description: 'The account that is related to the task; The name of the account.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesTasks
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - Tasks
+      parameters: &id007
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema:
+          type: integer
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema:
+          type: string
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema:
+          type: string
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema:
+          type: string
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema:
+          type: integer
+          minimum: 1
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: Tasks_post
+      summary: POST Tasks
+      description: 'The account that is related to the task; The name of the account.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesTasks
+
+
+        Scope: Organization workflow'
+      tags:
+      - Activities
+      - Tasks
+      parameters: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivitiesTasks'
+x-exact-online-activities-resources:
+- name: AnnualStatements
+  full: ActivitiesAnnualStatements
+  path: /api/v1/{division}/activities/AnnualStatements
+  methods:
+  - GET
+  - POST
+  - PUT
+  docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesAnnualStatements
+  description: The date indicating by when the action has to be taken; The status
+    of the Annual Statement request.
+  read_only: false
+- name: CommunicationNotes
+  full: ActivitiesCommunicationNotes
+  path: /api/v1/{division}/activities/CommunicationNotes
+  methods:
+  - GET
+  - POST
+  docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesCommunicationNotes
+  description: The account that is related to the communication note; The name of
+    the account.
+  read_only: false
+- name: Complaints
+  full: ActivitiesComplaints
+  path: /api/v1/{division}/activities/Complaints
+  methods:
+  - GET
+  - POST
+  docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesComplaints
+  description: The account that is related to the complaint; The name of the account.
+  read_only: false
+- name: Events
+  full: ActivitiesEvents
+  path: /api/v1/{division}/activities/Events
+  methods:
+  - GET
+  - POST
+  docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesEvents
+  description: The account that is related to the event; The name of the account.
+  read_only: false
+- name: Fiscals
+  full: ActivitiesFiscals
+  path: /api/v1/{division}/activities/Fiscals
+  methods:
+  - GET
+  - POST
+  - PUT
+  docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesFiscals
+  description: The date indicating by when the action has to be taken; The user that
+    the request is assigned to.
+  read_only: false
+- name: ServiceRequests
+  full: ActivitiesServiceRequests
+  path: /api/v1/{division}/activities/ServiceRequests
+  methods:
+  - GET
+  - POST
+  docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesServiceRequests
+  description: The account that is related to the service request; The name of the
+    account.
+  read_only: false
+- name: Tasks
+  full: ActivitiesTasks
+  path: /api/v1/{division}/activities/Tasks
+  methods:
+  - GET
+  - POST
+  docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesTasks
+  description: The account that is related to the task; The name of the account.
+  read_only: false
+externalDocs:
+  description: Official Exact Online REST API resources
+  url: https://start.exactonline.nl/docs/HlpRestAPIResources.aspx?SourceAction=10
