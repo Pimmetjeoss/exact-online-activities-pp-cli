@@ -1,0 +1,28 @@
+{
+  "dir": ".",
+  "dead_functions_found": [
+    "BindMCPClient",
+    "addNovelCommandIfAbsent",
+    "collectionItemsForOutput",
+    "decodeWriteThroughNonEmptyArray",
+    "hasChangedLocalFlags",
+    "newActivitiesByAccountCmd",
+    "newActivitiesDocsCmd",
+    "newActivitiesOpenItemsCmd",
+    "newActivitiesOverviewCmd",
+    "newActivitiesResourcesCmd",
+    "registerClientHook",
+    "registerNovelCommand",
+    "registerPlatformSource",
+    "resolvePaginatedRead",
+    "resolveRead",
+    "resolveReadWithStrategy",
+    "resourceDetailPath",
+    "resourceNextCursor",
+    "resourcePageParams",
+    "resourceWritePath"
+  ],
+  "removed": null,
+  "build_verified": false,
+  "dry_run": true
+}

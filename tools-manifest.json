@@ -1,0 +1,1595 @@
+{
+  "api_name": "exact-online-activities",
+  "base_url": "https://start.exactonline.nl",
+  "description": "Activities-only Exact Online REST/OData API surface generated from the official Exact Online REST API documentation.",
+  "mcp_ready": "full",
+  "http_transport": "standard",
+  "auth": {
+    "type": "bearer_token",
+    "header": "Authorization",
+    "env_vars": [
+      "EXACT_ONLINE_ACTIVITIES_OAUTH2"
+    ],
+    "env_var_specs": [
+      {
+        "name": "EXACT_ONLINE_ACTIVITIES_OAUTH2",
+        "kind": "per_call",
+        "required": true,
+        "sensitive": true,
+        "inferred": true
+      }
+    ]
+  },
+  "required_headers": [],
+  "tools": [
+    {
+      "name": "activities_annual-statements-get",
+      "description": "The date indicating by when the action has to be taken; The status of the Annual Statement request. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesAnnualStatements Scope: Organization workflow. Required: division. Returns the ActivitiesAnnualStatementsGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/activities/AnnualStatements",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "activities_annual-statements-post",
+      "description": "The date indicating by when the action has to be taken; The status of the Annual Statement request. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesAnnualStatements Scope: Organization workflow. Required: division. Optional: ActionDate, AnnualStatementStatus, AnnualStatementStatusRemark (plus 18 more). Returns the new ActivitiesAnnualStatementsPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/activities/AnnualStatements",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        },
+        {
+          "name": "ActionDate",
+          "type": "string",
+          "location": "body",
+          "description": "The date indicating by when the action has to be taken"
+        },
+        {
+          "name": "AnnualStatementStatus",
+          "type": "string",
+          "location": "body",
+          "description": "The status of the Annual Statement request"
+        },
+        {
+          "name": "AnnualStatementStatusRemark",
+          "type": "string",
+          "location": "body",
+          "description": "The remark of the Annual Statement request status"
+        },
+        {
+          "name": "AssignedTo",
+          "type": "string",
+          "location": "body",
+          "description": "The user that the request is assigned to"
+        },
+        {
+          "name": "AssignedToFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The user name"
+        },
+        {
+          "name": "Created",
+          "type": "string",
+          "location": "body",
+          "description": "Creation date"
+        },
+        {
+          "name": "Creator",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the creator"
+        },
+        {
+          "name": "CreatorFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the creator"
+        },
+        {
+          "name": "Description",
+          "type": "string",
+          "location": "body",
+          "description": "The description"
+        },
+        {
+          "name": "division-2",
+          "wire_name": "Division",
+          "type": "int",
+          "location": "body",
+          "description": "The division"
+        },
+        {
+          "name": "HID",
+          "type": "int",
+          "location": "body",
+          "description": "The human readable key"
+        },
+        {
+          "name": "ID",
+          "type": "string",
+          "location": "body",
+          "description": "The Primary key"
+        },
+        {
+          "name": "Message",
+          "type": "string",
+          "location": "body",
+          "description": "The message content of the Annual Statement request"
+        },
+        {
+          "name": "Modified",
+          "type": "string",
+          "location": "body",
+          "description": "Last modified date"
+        },
+        {
+          "name": "Modifier",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the last modifier"
+        },
+        {
+          "name": "ModifierFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the last modifier"
+        },
+        {
+          "name": "MyFirmUserEmail",
+          "type": "string",
+          "location": "body",
+          "description": "The email of MyFirm user"
+        },
+        {
+          "name": "Status",
+          "type": "int",
+          "location": "body",
+          "description": "Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed"
+        },
+        {
+          "name": "StatusDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the status"
+        },
+        {
+          "name": "Type",
+          "type": "string",
+          "location": "body",
+          "description": "The message content of the Annual Statement request"
+        },
+        {
+          "name": "Url",
+          "type": "string",
+          "location": "body",
+          "description": "The URL back to Annual Statement"
+        }
+      ]
+    },
+    {
+      "name": "activities_annual-statements-put",
+      "description": "The date indicating by when the action has to be taken; The status of the Annual Statement request. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesAnnualStatements Scope: Organization workflow. Required: division. Optional: ActionDate, AnnualStatementStatus, AnnualStatementStatusRemark (plus 18 more). Returns the updated ActivitiesAnnualStatementsPutResponse.",
+      "method": "PUT",
+      "path": "/api/v1/{division}/activities/AnnualStatements",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        },
+        {
+          "name": "ActionDate",
+          "type": "string",
+          "location": "body",
+          "description": "The date indicating by when the action has to be taken"
+        },
+        {
+          "name": "AnnualStatementStatus",
+          "type": "string",
+          "location": "body",
+          "description": "The status of the Annual Statement request"
+        },
+        {
+          "name": "AnnualStatementStatusRemark",
+          "type": "string",
+          "location": "body",
+          "description": "The remark of the Annual Statement request status"
+        },
+        {
+          "name": "AssignedTo",
+          "type": "string",
+          "location": "body",
+          "description": "The user that the request is assigned to"
+        },
+        {
+          "name": "AssignedToFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The user name"
+        },
+        {
+          "name": "Created",
+          "type": "string",
+          "location": "body",
+          "description": "Creation date"
+        },
+        {
+          "name": "Creator",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the creator"
+        },
+        {
+          "name": "CreatorFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the creator"
+        },
+        {
+          "name": "Description",
+          "type": "string",
+          "location": "body",
+          "description": "The description"
+        },
+        {
+          "name": "division-2",
+          "wire_name": "Division",
+          "type": "int",
+          "location": "body",
+          "description": "The division"
+        },
+        {
+          "name": "HID",
+          "type": "int",
+          "location": "body",
+          "description": "The human readable key"
+        },
+        {
+          "name": "ID",
+          "type": "string",
+          "location": "body",
+          "description": "The Primary key"
+        },
+        {
+          "name": "Message",
+          "type": "string",
+          "location": "body",
+          "description": "The message content of the Annual Statement request"
+        },
+        {
+          "name": "Modified",
+          "type": "string",
+          "location": "body",
+          "description": "Last modified date"
+        },
+        {
+          "name": "Modifier",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the last modifier"
+        },
+        {
+          "name": "ModifierFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the last modifier"
+        },
+        {
+          "name": "MyFirmUserEmail",
+          "type": "string",
+          "location": "body",
+          "description": "The email of MyFirm user"
+        },
+        {
+          "name": "Status",
+          "type": "int",
+          "location": "body",
+          "description": "Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed"
+        },
+        {
+          "name": "StatusDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the status"
+        },
+        {
+          "name": "Type",
+          "type": "string",
+          "location": "body",
+          "description": "The message content of the Annual Statement request"
+        },
+        {
+          "name": "Url",
+          "type": "string",
+          "location": "body",
+          "description": "The URL back to Annual Statement"
+        }
+      ]
+    },
+    {
+      "name": "activities_communication-notes-get",
+      "description": "The account that is related to the communication note; The name of the account. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesCommunicationNotes Scope: Organization workflow. Required: division. Returns the ActivitiesCommunicationNotesGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/activities/CommunicationNotes",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "activities_communication-notes-post",
+      "description": "The account that is related to the communication note; The name of the account. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesCommunicationNotes Scope: Organization workflow. Required: division. Optional: Account, AccountName, Attachments (plus 24 more). Returns the new ActivitiesCommunicationNotesPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/activities/CommunicationNotes",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        },
+        {
+          "name": "Account",
+          "type": "string",
+          "location": "body",
+          "description": "The account that is related to the communication note"
+        },
+        {
+          "name": "AccountName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the account"
+        },
+        {
+          "name": "Attachments",
+          "type": "string",
+          "location": "body",
+          "description": "Attachments linked to the communication note"
+        },
+        {
+          "name": "Campaign",
+          "type": "string",
+          "location": "body",
+          "description": "The campaign linked to the communication note"
+        },
+        {
+          "name": "CampaignDescription",
+          "type": "string",
+          "location": "body",
+          "description": "Description of the campaign"
+        },
+        {
+          "name": "Contact",
+          "type": "string",
+          "location": "body",
+          "description": "The contact person that is related to the communication note"
+        },
+        {
+          "name": "ContactFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the contact person"
+        },
+        {
+          "name": "Created",
+          "type": "string",
+          "location": "body",
+          "description": "Creation date"
+        },
+        {
+          "name": "Creator",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the creator"
+        },
+        {
+          "name": "CreatorFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the creator"
+        },
+        {
+          "name": "Date",
+          "type": "string",
+          "location": "body",
+          "description": "The date"
+        },
+        {
+          "name": "division-2",
+          "wire_name": "Division",
+          "type": "int",
+          "location": "body",
+          "description": "The division"
+        },
+        {
+          "name": "Document",
+          "type": "string",
+          "location": "body",
+          "description": "The document that is linked to the communication note"
+        },
+        {
+          "name": "DocumentSubject",
+          "type": "string",
+          "location": "body",
+          "description": "The subject of the document"
+        },
+        {
+          "name": "HID",
+          "type": "int",
+          "location": "body",
+          "description": "The human readable key"
+        },
+        {
+          "name": "ID",
+          "type": "string",
+          "location": "body",
+          "description": "The Primary key"
+        },
+        {
+          "name": "Modified",
+          "type": "string",
+          "location": "body",
+          "description": "Last modified date"
+        },
+        {
+          "name": "Modifier",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the last modifier"
+        },
+        {
+          "name": "ModifierFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the last modifier"
+        },
+        {
+          "name": "Notes",
+          "type": "string",
+          "location": "body",
+          "description": "The notes of the communication note"
+        },
+        {
+          "name": "Opportunity",
+          "type": "string",
+          "location": "body",
+          "description": "The opportunity linked to the communication note"
+        },
+        {
+          "name": "OpportunityName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the opportunity"
+        },
+        {
+          "name": "Status",
+          "type": "int",
+          "location": "body",
+          "description": "Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed"
+        },
+        {
+          "name": "StatusDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the status"
+        },
+        {
+          "name": "Subject",
+          "type": "string",
+          "location": "body",
+          "description": "A short description of the communication note"
+        },
+        {
+          "name": "User",
+          "type": "string",
+          "location": "body",
+          "description": "The user that the communication note is assigned to"
+        },
+        {
+          "name": "UserFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The user name"
+        }
+      ]
+    },
+    {
+      "name": "activities_complaints-get",
+      "description": "The account that is related to the complaint; The name of the account. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesComplaints Scope: Organization workflow. Required: division. Returns the ActivitiesComplaintsGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/activities/Complaints",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "activities_complaints-post",
+      "description": "The account that is related to the complaint; The name of the account. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesComplaints Scope: Organization workflow. Required: division. Optional: Account, AccountName, AssignedTo (plus 21 more). Returns the new ActivitiesComplaintsPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/activities/Complaints",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        },
+        {
+          "name": "Account",
+          "type": "string",
+          "location": "body",
+          "description": "The account that is related to the complaint"
+        },
+        {
+          "name": "AccountName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the account"
+        },
+        {
+          "name": "AssignedTo",
+          "type": "string",
+          "location": "body",
+          "description": "The user that the complaint is assigned to"
+        },
+        {
+          "name": "AssignedToFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The user name"
+        },
+        {
+          "name": "Attachments",
+          "type": "string",
+          "location": "body",
+          "description": "Attachments linked to the complaint"
+        },
+        {
+          "name": "Complaint",
+          "type": "string",
+          "location": "body",
+          "description": "A short description of the complaint"
+        },
+        {
+          "name": "Contact",
+          "type": "string",
+          "location": "body",
+          "description": "The contact person that is related to the complaint"
+        },
+        {
+          "name": "ContactFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the contact person"
+        },
+        {
+          "name": "Created",
+          "type": "string",
+          "location": "body",
+          "description": "Creation date"
+        },
+        {
+          "name": "Creator",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the creator"
+        },
+        {
+          "name": "CreatorFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the creator"
+        },
+        {
+          "name": "division-2",
+          "wire_name": "Division",
+          "type": "int",
+          "location": "body",
+          "description": "The division"
+        },
+        {
+          "name": "Document",
+          "type": "string",
+          "location": "body",
+          "description": "The document that is linked to the complaint"
+        },
+        {
+          "name": "DocumentSubject",
+          "type": "string",
+          "location": "body",
+          "description": "The subject of the document"
+        },
+        {
+          "name": "HID",
+          "type": "int",
+          "location": "body",
+          "description": "The human readable key"
+        },
+        {
+          "name": "ID",
+          "type": "string",
+          "location": "body",
+          "description": "The Primary key"
+        },
+        {
+          "name": "Modified",
+          "type": "string",
+          "location": "body",
+          "description": "Last modified date"
+        },
+        {
+          "name": "Modifier",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the last modifier"
+        },
+        {
+          "name": "ModifierFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the last modifier"
+        },
+        {
+          "name": "NextAction",
+          "type": "string",
+          "location": "body",
+          "description": "The date indicating by when the next action has to be taken"
+        },
+        {
+          "name": "Notes",
+          "type": "string",
+          "location": "body",
+          "description": "The notes of the complaint"
+        },
+        {
+          "name": "ReceiptDate",
+          "type": "string",
+          "location": "body",
+          "description": "The date the complaint was received"
+        },
+        {
+          "name": "Status",
+          "type": "int",
+          "location": "body",
+          "description": "Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed"
+        },
+        {
+          "name": "StatusDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the status"
+        }
+      ]
+    },
+    {
+      "name": "activities_events-get",
+      "description": "The account that is related to the event; The name of the account. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesEvents Scope: Organization workflow. Required: division. Returns the ActivitiesEventsGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/activities/Events",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "activities_events-post",
+      "description": "The account that is related to the event; The name of the account. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesEvents Scope: Organization workflow. Required: division. Optional: Account, AccountName, Attachments (plus 27 more). Returns the new ActivitiesEventsPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/activities/Events",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        },
+        {
+          "name": "Account",
+          "type": "string",
+          "location": "body",
+          "description": "The account that is related to the event"
+        },
+        {
+          "name": "AccountName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the account"
+        },
+        {
+          "name": "Attachments",
+          "type": "string",
+          "location": "body",
+          "description": "Attachments linked to the event"
+        },
+        {
+          "name": "Campaign",
+          "type": "string",
+          "location": "body",
+          "description": "The campaign linked to the event"
+        },
+        {
+          "name": "CampaignDescription",
+          "type": "string",
+          "location": "body",
+          "description": "Description of the campaign"
+        },
+        {
+          "name": "Contact",
+          "type": "string",
+          "location": "body",
+          "description": "The contact person that is related to the event"
+        },
+        {
+          "name": "ContactFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the contact person"
+        },
+        {
+          "name": "Created",
+          "type": "string",
+          "location": "body",
+          "description": "Creation date"
+        },
+        {
+          "name": "Creator",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the creator"
+        },
+        {
+          "name": "CreatorFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the creator"
+        },
+        {
+          "name": "Description",
+          "type": "string",
+          "location": "body",
+          "description": "The description"
+        },
+        {
+          "name": "division-2",
+          "wire_name": "Division",
+          "type": "int",
+          "location": "body",
+          "description": "The division"
+        },
+        {
+          "name": "Document",
+          "type": "string",
+          "location": "body",
+          "description": "The document that is linked to the event"
+        },
+        {
+          "name": "DocumentSubject",
+          "type": "string",
+          "location": "body",
+          "description": "The subject of the document"
+        },
+        {
+          "name": "EndDate",
+          "type": "string",
+          "location": "body",
+          "description": "The end date and time"
+        },
+        {
+          "name": "HID",
+          "type": "int",
+          "location": "body",
+          "description": "The human readable key"
+        },
+        {
+          "name": "ID",
+          "type": "string",
+          "location": "body",
+          "description": "The Primary key"
+        },
+        {
+          "name": "Modified",
+          "type": "string",
+          "location": "body",
+          "description": "Last modified date"
+        },
+        {
+          "name": "Modifier",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the last modifier"
+        },
+        {
+          "name": "ModifierFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the last modifier"
+        },
+        {
+          "name": "Notes",
+          "type": "string",
+          "location": "body",
+          "description": "The notes of the event"
+        },
+        {
+          "name": "Opportunity",
+          "type": "string",
+          "location": "body",
+          "description": "The opportunity linked to the event"
+        },
+        {
+          "name": "OpportunityName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the opportunity"
+        },
+        {
+          "name": "Project",
+          "type": "string",
+          "location": "body",
+          "description": "The project linked to the event"
+        },
+        {
+          "name": "ProjectDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the project"
+        },
+        {
+          "name": "StartDate",
+          "type": "string",
+          "location": "body",
+          "description": "The start date and time"
+        },
+        {
+          "name": "Status",
+          "type": "int",
+          "location": "body",
+          "description": "Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed"
+        },
+        {
+          "name": "StatusDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the status"
+        },
+        {
+          "name": "User",
+          "type": "string",
+          "location": "body",
+          "description": "The user that has the event"
+        },
+        {
+          "name": "UserFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The user name"
+        }
+      ]
+    },
+    {
+      "name": "activities_fiscals-get",
+      "description": "The date indicating by when the action has to be taken; The user that the request is assigned to. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesFiscals Scope: Organization workflow. Required: division. Returns the ActivitiesFiscalsGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/activities/Fiscals",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "activities_fiscals-post",
+      "description": "The date indicating by when the action has to be taken; The user that the request is assigned to. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesFiscals Scope: Organization workflow. Required: division. Optional: ActionDate, AssignedTo, AssignedToFullName (plus 18 more). Returns the new ActivitiesFiscalsPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/activities/Fiscals",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        },
+        {
+          "name": "ActionDate",
+          "type": "string",
+          "location": "body",
+          "description": "The date indicating by when the action has to be taken"
+        },
+        {
+          "name": "AssignedTo",
+          "type": "string",
+          "location": "body",
+          "description": "The user that the request is assigned to"
+        },
+        {
+          "name": "AssignedToFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The user name"
+        },
+        {
+          "name": "Created",
+          "type": "string",
+          "location": "body",
+          "description": "Creation date"
+        },
+        {
+          "name": "Creator",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the creator"
+        },
+        {
+          "name": "CreatorFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the creator"
+        },
+        {
+          "name": "Description",
+          "type": "string",
+          "location": "body",
+          "description": "The description"
+        },
+        {
+          "name": "division-2",
+          "wire_name": "Division",
+          "type": "int",
+          "location": "body",
+          "description": "The division"
+        },
+        {
+          "name": "FiscalStatus",
+          "type": "string",
+          "location": "body",
+          "description": "The status of the Fiscal request"
+        },
+        {
+          "name": "FiscalStatusRemark",
+          "type": "string",
+          "location": "body",
+          "description": "The remark of the Fiscal request status"
+        },
+        {
+          "name": "HID",
+          "type": "int",
+          "location": "body",
+          "description": "The human readable key"
+        },
+        {
+          "name": "ID",
+          "type": "string",
+          "location": "body",
+          "description": "The Primary key"
+        },
+        {
+          "name": "Message",
+          "type": "string",
+          "location": "body",
+          "description": "The message content of the Fiscal request"
+        },
+        {
+          "name": "Modified",
+          "type": "string",
+          "location": "body",
+          "description": "Last modified date"
+        },
+        {
+          "name": "Modifier",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the last modifier"
+        },
+        {
+          "name": "ModifierFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the last modifier"
+        },
+        {
+          "name": "MyFirmUserEmail",
+          "type": "string",
+          "location": "body",
+          "description": "The email of MyFirm user"
+        },
+        {
+          "name": "Status",
+          "type": "int",
+          "location": "body",
+          "description": "Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed"
+        },
+        {
+          "name": "StatusDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the status"
+        },
+        {
+          "name": "Type",
+          "type": "string",
+          "location": "body",
+          "description": "The message content of the Fiscal request"
+        },
+        {
+          "name": "Url",
+          "type": "string",
+          "location": "body",
+          "description": "The URL back to Fiscal"
+        }
+      ]
+    },
+    {
+      "name": "activities_fiscals-put",
+      "description": "The date indicating by when the action has to be taken; The user that the request is assigned to. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesFiscals Scope: Organization workflow. Required: division. Optional: ActionDate, AssignedTo, AssignedToFullName (plus 18 more). Returns the updated ActivitiesFiscalsPutResponse.",
+      "method": "PUT",
+      "path": "/api/v1/{division}/activities/Fiscals",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        },
+        {
+          "name": "ActionDate",
+          "type": "string",
+          "location": "body",
+          "description": "The date indicating by when the action has to be taken"
+        },
+        {
+          "name": "AssignedTo",
+          "type": "string",
+          "location": "body",
+          "description": "The user that the request is assigned to"
+        },
+        {
+          "name": "AssignedToFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The user name"
+        },
+        {
+          "name": "Created",
+          "type": "string",
+          "location": "body",
+          "description": "Creation date"
+        },
+        {
+          "name": "Creator",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the creator"
+        },
+        {
+          "name": "CreatorFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the creator"
+        },
+        {
+          "name": "Description",
+          "type": "string",
+          "location": "body",
+          "description": "The description"
+        },
+        {
+          "name": "division-2",
+          "wire_name": "Division",
+          "type": "int",
+          "location": "body",
+          "description": "The division"
+        },
+        {
+          "name": "FiscalStatus",
+          "type": "string",
+          "location": "body",
+          "description": "The status of the Fiscal request"
+        },
+        {
+          "name": "FiscalStatusRemark",
+          "type": "string",
+          "location": "body",
+          "description": "The remark of the Fiscal request status"
+        },
+        {
+          "name": "HID",
+          "type": "int",
+          "location": "body",
+          "description": "The human readable key"
+        },
+        {
+          "name": "ID",
+          "type": "string",
+          "location": "body",
+          "description": "The Primary key"
+        },
+        {
+          "name": "Message",
+          "type": "string",
+          "location": "body",
+          "description": "The message content of the Fiscal request"
+        },
+        {
+          "name": "Modified",
+          "type": "string",
+          "location": "body",
+          "description": "Last modified date"
+        },
+        {
+          "name": "Modifier",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the last modifier"
+        },
+        {
+          "name": "ModifierFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the last modifier"
+        },
+        {
+          "name": "MyFirmUserEmail",
+          "type": "string",
+          "location": "body",
+          "description": "The email of MyFirm user"
+        },
+        {
+          "name": "Status",
+          "type": "int",
+          "location": "body",
+          "description": "Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed"
+        },
+        {
+          "name": "StatusDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the status"
+        },
+        {
+          "name": "Type",
+          "type": "string",
+          "location": "body",
+          "description": "The message content of the Fiscal request"
+        },
+        {
+          "name": "Url",
+          "type": "string",
+          "location": "body",
+          "description": "The URL back to Fiscal"
+        }
+      ]
+    },
+    {
+      "name": "activities_service-requests-get",
+      "description": "The account that is related to the service request; The name of the account. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesServiceRequests Scope: Organization workflow. Required: division. Returns the ActivitiesServiceRequestsGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/activities/ServiceRequests",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "activities_service-requests-post",
+      "description": "The account that is related to the service request; The name of the account. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesServiceRequests Scope: Organization workflow. Required: division. Optional: Account, AccountName, AssignedTo (plus 21 more). Returns the new ActivitiesServiceRequestsPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/activities/ServiceRequests",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        },
+        {
+          "name": "Account",
+          "type": "string",
+          "location": "body",
+          "description": "The account that is related to the service request"
+        },
+        {
+          "name": "AccountName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the account"
+        },
+        {
+          "name": "AssignedTo",
+          "type": "string",
+          "location": "body",
+          "description": "The user that the service request is assigned to"
+        },
+        {
+          "name": "AssignedToFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The user name"
+        },
+        {
+          "name": "Attachments",
+          "type": "string",
+          "location": "body",
+          "description": "Attachments linked to the service request"
+        },
+        {
+          "name": "Contact",
+          "type": "string",
+          "location": "body",
+          "description": "The contact person that is related to the service request"
+        },
+        {
+          "name": "ContactFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the contact person"
+        },
+        {
+          "name": "Created",
+          "type": "string",
+          "location": "body",
+          "description": "Creation date"
+        },
+        {
+          "name": "Creator",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the creator"
+        },
+        {
+          "name": "CreatorFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the creator"
+        },
+        {
+          "name": "Description",
+          "type": "string",
+          "location": "body",
+          "description": "The description"
+        },
+        {
+          "name": "division-2",
+          "wire_name": "Division",
+          "type": "int",
+          "location": "body",
+          "description": "The division"
+        },
+        {
+          "name": "Document",
+          "type": "string",
+          "location": "body",
+          "description": "The document that is linked to the service request"
+        },
+        {
+          "name": "DocumentSubject",
+          "type": "string",
+          "location": "body",
+          "description": "The subject of the document"
+        },
+        {
+          "name": "HID",
+          "type": "int",
+          "location": "body",
+          "description": "The human readable key"
+        },
+        {
+          "name": "ID",
+          "type": "string",
+          "location": "body",
+          "description": "The Primary key"
+        },
+        {
+          "name": "Modified",
+          "type": "string",
+          "location": "body",
+          "description": "Last modified date"
+        },
+        {
+          "name": "Modifier",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the last modifier"
+        },
+        {
+          "name": "ModifierFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the last modifier"
+        },
+        {
+          "name": "NextAction",
+          "type": "string",
+          "location": "body",
+          "description": "The date indicating by when the next action has to be taken"
+        },
+        {
+          "name": "Notes",
+          "type": "string",
+          "location": "body",
+          "description": "The notes of the service request"
+        },
+        {
+          "name": "ReceiptDate",
+          "type": "string",
+          "location": "body",
+          "description": "The date the service request was received"
+        },
+        {
+          "name": "Status",
+          "type": "int",
+          "location": "body",
+          "description": "Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed"
+        },
+        {
+          "name": "StatusDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the status"
+        }
+      ]
+    },
+    {
+      "name": "activities_tasks-get",
+      "description": "The account that is related to the task; The name of the account. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesTasks Scope: Organization workflow. Required: division. Returns the ActivitiesTasksGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/activities/Tasks",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "activities_tasks-post",
+      "description": "The account that is related to the task; The name of the account. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesTasks Scope: Organization workflow. Required: division. Optional: Account, AccountName, ActionDate (plus 28 more). Returns the new ActivitiesTasksPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/activities/Tasks",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        },
+        {
+          "name": "Account",
+          "type": "string",
+          "location": "body",
+          "description": "The account that is related to the task"
+        },
+        {
+          "name": "AccountName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the account"
+        },
+        {
+          "name": "ActionDate",
+          "type": "string",
+          "location": "body",
+          "description": "The end date by which the task has to be realized"
+        },
+        {
+          "name": "Attachments",
+          "type": "string",
+          "location": "body",
+          "description": "Attachments linked to the task"
+        },
+        {
+          "name": "Contact",
+          "type": "string",
+          "location": "body",
+          "description": "The contact person that is related to the task"
+        },
+        {
+          "name": "ContactFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the contact person"
+        },
+        {
+          "name": "Created",
+          "type": "string",
+          "location": "body",
+          "description": "Creation date"
+        },
+        {
+          "name": "Creator",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the creator"
+        },
+        {
+          "name": "CreatorFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the creator"
+        },
+        {
+          "name": "CustomTaskType",
+          "type": "string",
+          "location": "body",
+          "description": "Custom type of the task. If both TaskType and CustomTaskType are specified then TaskType is preferred. This value is write-only."
+        },
+        {
+          "name": "Description",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the task"
+        },
+        {
+          "name": "division-2",
+          "wire_name": "Division",
+          "type": "int",
+          "location": "body",
+          "description": "The division of the task"
+        },
+        {
+          "name": "Document",
+          "type": "string",
+          "location": "body",
+          "description": "The document that is linked to the task"
+        },
+        {
+          "name": "DocumentSubject",
+          "type": "string",
+          "location": "body",
+          "description": "The subject of the document"
+        },
+        {
+          "name": "Employee",
+          "type": "string",
+          "location": "body",
+          "description": "The employee that is linked to the task. Note : For POST/PUT: This field value is only used when the 'Employees' featureset is enabled. For GET: To see the field value required 'Employee' featureset. Otherwise, the field always return NULL value."
+        },
+        {
+          "name": "HID",
+          "type": "int",
+          "location": "body",
+          "description": "The human readable key"
+        },
+        {
+          "name": "ID",
+          "type": "string",
+          "location": "body",
+          "description": "The Primary key"
+        },
+        {
+          "name": "Modified",
+          "type": "string",
+          "location": "body",
+          "description": "Last modified date"
+        },
+        {
+          "name": "Modifier",
+          "type": "string",
+          "location": "body",
+          "description": "User ID of the last modifier"
+        },
+        {
+          "name": "ModifierFullName",
+          "type": "string",
+          "location": "body",
+          "description": "Name of the last modifier"
+        },
+        {
+          "name": "Notes",
+          "type": "string",
+          "location": "body",
+          "description": "The notes of the task"
+        },
+        {
+          "name": "Opportunity",
+          "type": "string",
+          "location": "body",
+          "description": "The opportunity linked to the task"
+        },
+        {
+          "name": "OpportunityName",
+          "type": "string",
+          "location": "body",
+          "description": "The name of the opportunity"
+        },
+        {
+          "name": "Project",
+          "type": "string",
+          "location": "body",
+          "description": "The project linked to the task"
+        },
+        {
+          "name": "ProjectDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the project"
+        },
+        {
+          "name": "Status",
+          "type": "int",
+          "location": "body",
+          "description": "Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed"
+        },
+        {
+          "name": "StatusDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the status"
+        },
+        {
+          "name": "TaskType",
+          "type": "int",
+          "location": "body",
+          "description": "The type of the task. This value is write-only.0 = Other (default), 1 = Call, 2 = Request for information, 3 = Investigate, 4 = Correspondence, 5 = Create an appointment, 6 = Create a quotation"
+        },
+        {
+          "name": "TaskTypeDescription",
+          "type": "string",
+          "location": "body",
+          "description": "The description of the type of the task"
+        },
+        {
+          "name": "User",
+          "type": "string",
+          "location": "body",
+          "description": "The user that has to realize the task"
+        },
+        {
+          "name": "UserFullName",
+          "type": "string",
+          "location": "body",
+          "description": "The user name"
+        }
+      ]
+    }
+  ]
+}

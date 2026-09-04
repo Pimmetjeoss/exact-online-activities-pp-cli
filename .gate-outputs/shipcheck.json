@@ -1,0 +1,74 @@
+{
+  "passed": false,
+  "exit_code": 3,
+  "verdict": "HOLD",
+  "reason": "scorecard hold: unverified dimensions: live_api_verification",
+  "started_at": "2026-09-04T03:59:11Z",
+  "elapsed_ms": 6780,
+  "legs": [
+    {
+      "name": "verify",
+      "exit_code": 0,
+      "passed": true,
+      "verdict": "PASS",
+      "started_at": "2026-09-04T03:59:11Z",
+      "elapsed_ms": 2612,
+      "command": "/home/pimmetje/.hermes/profiles/cli/workspace/repos/cli-printing-press/printing-press verify --dir /home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli --write-manifest /home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli/.printing-press.json --spec spec.yaml --fix"
+    },
+    {
+      "name": "validate-narrative",
+      "exit_code": 0,
+      "passed": true,
+      "verdict": "PASS",
+      "started_at": "2026-09-04T03:59:14Z",
+      "elapsed_ms": 15,
+      "command": "/home/pimmetje/.hermes/profiles/cli/workspace/repos/cli-printing-press/printing-press validate-narrative --strict --full-examples --research /home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli/research.json --binary /home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli/exact-online-activities-pp-cli"
+    },
+    {
+      "name": "dogfood",
+      "exit_code": 0,
+      "passed": true,
+      "verdict": "PASS",
+      "started_at": "2026-09-04T03:59:14Z",
+      "elapsed_ms": 2627,
+      "command": "/home/pimmetje/.hermes/profiles/cli/workspace/repos/cli-printing-press/printing-press dogfood --dir /home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli --spec spec.yaml"
+    },
+    {
+      "name": "workflow-verify",
+      "exit_code": 0,
+      "passed": true,
+      "verdict": "PASS",
+      "started_at": "2026-09-04T03:59:16Z",
+      "elapsed_ms": 26,
+      "command": "/home/pimmetje/.hermes/profiles/cli/workspace/repos/cli-printing-press/printing-press workflow-verify --dir /home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli"
+    },
+    {
+      "name": "apify-audit",
+      "exit_code": 0,
+      "passed": true,
+      "verdict": "PASS",
+      "started_at": "2026-09-04T03:59:16Z",
+      "elapsed_ms": 31,
+      "command": "/home/pimmetje/.hermes/profiles/cli/workspace/repos/cli-printing-press/printing-press apify-audit --dir /home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli"
+    },
+    {
+      "name": "verify-skill",
+      "exit_code": 0,
+      "passed": true,
+      "verdict": "PASS",
+      "started_at": "2026-09-04T03:59:16Z",
+      "elapsed_ms": 611,
+      "command": "/home/pimmetje/.hermes/profiles/cli/workspace/repos/cli-printing-press/printing-press verify-skill --dir /home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli"
+    },
+    {
+      "name": "scorecard",
+      "exit_code": 3,
+      "passed": false,
+      "verdict": "HOLD",
+      "detail": "scorecard hold: unverified dimensions: live_api_verification",
+      "started_at": "2026-09-04T03:59:17Z",
+      "elapsed_ms": 854,
+      "command": "/home/pimmetje/.hermes/profiles/cli/workspace/repos/cli-printing-press/printing-press scorecard --dir /home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli --write-manifest /home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli/.printing-press.json --spec spec.yaml --live-check"
+    }
+  ]
+}

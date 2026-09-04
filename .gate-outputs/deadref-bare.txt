@@ -1,0 +1,41 @@
+== newActivitiesByAccountCmd ==
+== newActivitiesDocsCmd ==
+== newActivitiesOpenItemsCmd ==
+== newActivitiesOverviewCmd ==
+== newActivitiesResourcesCmd ==
+== addNovelCommandIfAbsent ==
+== registerNovelCommand ==
+== registerClientHook ==
+== resolveRead ==
+./internal/cli/activities_service-requests-get.go:47:			data, prov, err := resolveReadWithStrategyAndResponsePath(cmd.Context(), c, flags, "live", "activities", false, path, params, nil, "", cmd.ErrOrStderr())
+./internal/cli/activities_events-get.go:47:			data, prov, err := resolveReadWithStrategyAndResponsePath(cmd.Context(), c, flags, "live", "activities", false, path, params, nil, "", cmd.ErrOrStderr())
+./internal/cli/data_source.go:143:// resolveRead dispatches a GET request to either the live API or local store
+./internal/cli/data_source.go:159:	return resolveReadWithResponsePath(ctx, c, flags, resourceType, isList, path, params, headers, "", hintWriter)
+./internal/cli/data_source.go:163:	return resolveReadWithStrategyAndResponsePath(ctx, c, flags, "auto", resourceType, isList, path, params, headers, responsePath, hintWriter)
+./internal/cli/data_source.go:167:	return resolveReadWithStrategyAndResponsePath(ctx, c, flags, strategy, resourceType, isList, path, params, headers, "", hintWriter)
+== resolvePaginatedRead ==
+./internal/cli/data_source.go:247:// resolvePaginatedRead dispatches a paginated GET request to either the live API
+./internal/cli/data_source.go:252:	return resolvePaginatedReadWithStrategy(ctx, c, flags, "auto", resourceType, path, params, headers, fetchAll, cursorParam, paginationType, limitParam, defaultPageSize, nextCursorPath, hasMoreField, "", hintWriter)
+./internal/cli/data_source.go:256:	return resolvePaginatedReadWithStrategyAndJSONGuard(ctx, c, flags, strategy, resourceType, path, params, headers, fetchAll, cursorParam, paginationType, limitParam, defaultPageSize, nextCursorPath, hasMoreField, responsePath, true, liveAllRejectNone, hintWriter)
+== resolveReadWithStrategy ==
+./internal/cli/activities_service-requests-get.go:47:			data, prov, err := resolveReadWithStrategyAndResponsePath(cmd.Context(), c, flags, "live", "activities", false, path, params, nil, "", cmd.ErrOrStderr())
+./internal/cli/activities_events-get.go:47:			data, prov, err := resolveReadWithStrategyAndResponsePath(cmd.Context(), c, flags, "live", "activities", false, path, params, nil, "", cmd.ErrOrStderr())
+./internal/cli/data_source.go:163:	return resolveReadWithStrategyAndResponsePath(ctx, c, flags, "auto", resourceType, isList, path, params, headers, responsePath, hintWriter)
+./internal/cli/data_source.go:167:	return resolveReadWithStrategyAndResponsePath(ctx, c, flags, strategy, resourceType, isList, path, params, headers, "", hintWriter)
+./internal/cli/data_source.go:171:	return resolveReadWithStrategyResponsePathAndJSONGuard(ctx, c, flags, strategy, resourceType, isList, path, params, headers, responsePath, true, hintWriter)
+./internal/cli/activities_fiscals-get.go:47:			data, prov, err := resolveReadWithStrategyAndResponsePath(cmd.Context(), c, flags, "live", "activities", false, path, params, nil, "", cmd.ErrOrStderr())
+== resourceDetailPath ==
+./internal/cli/resource_paths.go:26:var resourceDetailPaths = map[string]string{ // #nosec G101 -- endpoint paths, not credentials.
+./internal/cli/resource_paths.go:50:	path, ok := resourceDetailPaths[resource]
+== resourceNextCursor ==
+== resourcePageParams ==
+== resourceWritePath ==
+./internal/cli/resource_paths.go:30:var resourceWritePaths = map[string]string{ // #nosec G101 -- endpoint paths, not credentials.
+./internal/cli/resource_paths.go:43:	if path, ok := resourceWritePaths[resource]; ok {
+== decodeWriteThroughNonEmptyArray ==
+./internal/cli/data_source.go:468:	if items, ok := extractWriteThroughListWrapperItems(envelope, decodeWriteThroughNonEmptyArray); ok {
+./internal/cli/data_source.go:489:	return extractWriteThroughSingleArraySibling(envelope, decodeWriteThroughNonEmptyArray)
+== collectionItemsForOutput ==
+./internal/cli/helpers.go:1035:// collectionItemsForOutput projects a paginated collection envelope to the
+== hasChangedLocalFlags ==
+./internal/cli/helpers.go:290:// hasChangedLocalFlags checks Flag.Changed because Cobra's derived local flag

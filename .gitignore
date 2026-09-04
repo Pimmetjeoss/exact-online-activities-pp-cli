@@ -1,0 +1,35 @@
+# Local config / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+credentials*
+tokens*
+config.toml
+*.sqlite
+*.sqlite3
+*.db
+
+# Generated build binaries and staging
+/exact-online-activities-pp-cli
+/exact-online-activities-pp-mcp
+/build/stage/
+/dist/
+
+# Keep MCP bundle, ignore other transient build outputs unless explicitly added
+!/build/*.mcpb
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Go
+*.test
+coverage.out

@@ -1,0 +1,31 @@
+{
+  "cli_dir": "/home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli",
+  "skill_path": "/home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli/SKILL.md",
+  "checks_run": [
+    "flag-names",
+    "flag-commands",
+    "positional-args",
+    "shell-var-quotes",
+    "unknown-command",
+    "canonical-sections"
+  ],
+  "recipes_checked": 19,
+  "findings": [
+    {
+      "check": "positional-args",
+      "severity": "warning",
+      "command": "exact-online-activities-pp-cli auth",
+      "detail": "got 2 positional args; Use: \"auth\" expects 0–0",
+      "evidence": "SKILL.md: set-token YOUR_TOKEN_HERE",
+      "likely_false_positive": true
+    },
+    {
+      "check": "positional-args",
+      "severity": "warning",
+      "command": "exact-online-activities-pp-cli auth",
+      "detail": "got 2 positional args; Use: \"auth\" expects 0–0",
+      "evidence": "README.md: set-token YOUR_TOKEN_HERE",
+      "likely_false_positive": true
+    }
+  ]
+}

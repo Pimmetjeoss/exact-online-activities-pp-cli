@@ -1,0 +1,19 @@
+?   	exact-online-activities-pp-cli/cmd/exact-online-activities-pp-cli	[no test files]
+?   	exact-online-activities-pp-cli/cmd/exact-online-activities-pp-mcp	[no test files]
+?   	exact-online-activities-pp-cli/internal/cache	[no test files]
+ok  	exact-online-activities-pp-cli/internal/cli	(cached)
+?   	exact-online-activities-pp-cli/internal/cli/playbooks	[no test files]
+ok  	exact-online-activities-pp-cli/internal/client	(cached)
+ok  	exact-online-activities-pp-cli/internal/cliutil	(cached)
+?   	exact-online-activities-pp-cli/internal/cliutil/testenv	[no test files]
+ok  	exact-online-activities-pp-cli/internal/config	(cached)
+ok  	exact-online-activities-pp-cli/internal/learn	(cached)
+ok  	exact-online-activities-pp-cli/internal/learn/entities	(cached)
+ok  	exact-online-activities-pp-cli/internal/learn/lookups	(cached)
+ok  	exact-online-activities-pp-cli/internal/learn/patterns	(cached)
+ok  	exact-online-activities-pp-cli/internal/mcp	0.192s
+ok  	exact-online-activities-pp-cli/internal/mcp/bound	(cached)
+ok  	exact-online-activities-pp-cli/internal/mcp/cobratree	3.249s
+ok  	exact-online-activities-pp-cli/internal/platform	(cached)
+ok  	exact-online-activities-pp-cli/internal/store	(cached)
+?   	exact-online-activities-pp-cli/internal/types	[no test files]

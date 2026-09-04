@@ -1,0 +1,39 @@
+{
+  "manifest_version": "0.3",
+  "name": "exact-online-activities-pp-mcp",
+  "display_name": "Exact Online Activities",
+  "version": "4.5.2",
+  "description": "Exact Online Activities API surface as MCP tools.",
+  "author": {
+    "name": "CLI Printing Press"
+  },
+  "license": "Apache-2.0",
+  "server": {
+    "type": "binary",
+    "entry_point": "bin/exact-online-activities-pp-mcp",
+    "mcp_config": {
+      "command": "${__dirname}/bin/exact-online-activities-pp-mcp",
+      "args": [],
+      "env": {
+        "EXACT_ONLINE_ACTIVITIES_OAUTH2": "${user_config.exact_online_activities_oauth2}"
+      }
+    }
+  },
+  "user_config": {
+    "exact_online_activities_oauth2": {
+      "type": "string",
+      "title": "EXACT_ONLINE_ACTIVITIES_OAUTH2",
+      "description": "Sets EXACT_ONLINE_ACTIVITIES_OAUTH2 for the Exact Online Activities MCP server.",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "compatibility": {
+    "claude_desktop": ">=1.0.0",
+    "platforms": [
+      "darwin",
+      "linux",
+      "win32"
+    ]
+  }
+}

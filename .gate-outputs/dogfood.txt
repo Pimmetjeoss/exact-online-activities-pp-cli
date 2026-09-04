@@ -1,0 +1,38 @@
+dogfood: using spec /home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli/spec.yaml (bundled)
+Dogfood Report: exact-online-activities-pp-cli
+================================
+
+Path Validity:     9/9 valid (PASS)
+
+Auth Protocol:     MATCH
+  Spec: bearer token format (expects "Bearer " prefix)
+  Generated: Uses "Bearer" prefix
+  Detail: spec and generated client both use "Bearer"
+
+OAuth Scope Cover: 16/16 endpoints covered (PASS)
+  Detail: all OAuth-scoped endpoints covered by generated auth scopes
+
+Dead Flags:        1 dead (WARN)
+  - maxAge (declared, never read)
+
+Dead Functions:    3 dead (WARN)
+  - collectionItemsForOutput (defined, never called)
+  - hasChangedLocalFlags (defined, never called)
+  - isDryRunResponseForClient (defined, never called)
+
+Data Pipeline:     PARTIAL
+  Sync: uses generic Upsert only
+  Search: uses generic Search only or direct SQL
+  Domain tables: 4
+
+Examples:          10/10 commands have examples (PASS)
+
+Novel Features:    SKIP (no research.json)
+
+MCP Surface:       PASS (MCP surface mirrors the Cobra tree at runtime)
+
+Verdict: WARN
+  - 1 dead flags found
+  - 3 dead helper functions found
+  - sync uses generic Upsert only
+  - 5 unregistered commands: by-account, docs, open-items, overview, resources

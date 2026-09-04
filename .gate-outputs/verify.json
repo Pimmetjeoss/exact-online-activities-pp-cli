@@ -1,0 +1,329 @@
+{
+  "verify": {
+    "mode": "mock",
+    "total": 41,
+    "passed": 40,
+    "failed": 1,
+    "critical": 1,
+    "pass_rate": 97.5609756097561,
+    "data_pipeline": true,
+    "data_pipeline_detail": "SKIP (CLI has no sync command)",
+    "freshness": {
+      "enabled": false,
+      "verdict": "SKIP",
+      "detail": "cache freshness helper not emitted"
+    },
+    "verdict": "WARN",
+    "results": [
+      {
+        "command": "resource-path:tail",
+        "kind": "static",
+        "help": false,
+        "dry_run": false,
+        "execute": false,
+        "score": 0,
+        "error": "resolver has no emitted resource paths; use the emitted resource path map"
+      },
+      {
+        "command": "activities",
+        "kind": "read",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "agent-context",
+        "kind": "write",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "auth",
+        "kind": "local",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "doctor",
+        "kind": "local",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "feedback",
+        "kind": "write",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "learnings",
+        "kind": "read",
+        "help": true,
+        "dry_run": true,
+        "execute": false,
+        "score": 2
+      },
+      {
+        "command": "login",
+        "kind": "write",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "playbook",
+        "kind": "write",
+        "help": true,
+        "dry_run": true,
+        "execute": false,
+        "score": 2
+      },
+      {
+        "command": "profile",
+        "kind": "write",
+        "help": true,
+        "dry_run": true,
+        "execute": false,
+        "score": 2
+      },
+      {
+        "command": "recall",
+        "kind": "read",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "tail",
+        "kind": "data-layer",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "teach",
+        "kind": "write",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "teach-lookup",
+        "kind": "write",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "teach-pattern",
+        "kind": "write",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "teach-playbook",
+        "kind": "write",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "which",
+        "kind": "read",
+        "help": true,
+        "dry_run": true,
+        "execute": true,
+        "score": 3
+      },
+      {
+        "command": "workflow",
+        "kind": "write",
+        "help": true,
+        "dry_run": true,
+        "execute": false,
+        "score": 2
+      }
+    ],
+    "path_param_probes": [
+      {
+        "command": "activities annual-statements-get",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities annual-statements-post",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities annual-statements-put",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities communication-notes-get",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities communication-notes-post",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities complaints-get",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities complaints-post",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities events-get",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities events-post",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities fiscals-get",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities fiscals-post",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities fiscals-put",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities service-requests-get",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities service-requests-post",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities tasks-get",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "activities tasks-post",
+        "positionals": [
+          "mock-value"
+        ],
+        "passed": true
+      },
+      {
+        "command": "learnings confirm",
+        "positionals": [
+          "12345"
+        ],
+        "passed": true
+      },
+      {
+        "command": "learnings forget",
+        "positionals": [
+          "mock-query"
+        ],
+        "passed": true
+      },
+      {
+        "command": "learnings reject",
+        "positionals": [
+          "12345"
+        ],
+        "passed": true
+      },
+      {
+        "command": "profile delete",
+        "positionals": [
+          "mock-query"
+        ],
+        "passed": true
+      },
+      {
+        "command": "profile save",
+        "positionals": [
+          "mock-query"
+        ],
+        "passed": true
+      },
+      {
+        "command": "profile show",
+        "positionals": [
+          "mock-query"
+        ],
+        "passed": true
+      },
+      {
+        "command": "profile use",
+        "positionals": [
+          "mock-query"
+        ],
+        "passed": true
+      }
+    ],
+    "binary": "/home/pimmetje/.hermes/profiles/cli/workspace/projects/exact-online-activities-pp-cli/exact-online-activities-pp-cli"
+  }
+}
