@@ -4,17 +4,29 @@ Activities-only Exact Online REST/OData API surface generated from the official 
 
 Learn more at [Exact Online Activities](https://start.exactonline.nl/docs/HlpRestAPIResources.aspx?SourceAction=10).
 
+<<<<<<< HEAD
 ## Install
 
 The recommended path installs both the `exact-online-activities-pp-cli` binary and the `pp-exact-online-activities` agent skill (Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, and other agents supported by the upstream [`skills`](https://github.com/vercel-labs/skills) CLI) in one shot:
 
 ```bash
 npx -y @mvanhorn/printing-press-library install exact-online-activities
+=======
+Printed by [@Pimmetjeoss](https://github.com/Pimmetjeoss) (Pimmetjeoss).
+
+## Install
+
+The recommended path installs both the `exact-online-activities-pp-cli` binary and the `pp-exact-online-activities` agent skill in one shot:
+
+```bash
+npx -y @mvanhorn/printing-press install exact-online-activities
+>>>>>>> origin/main
 ```
 
 For CLI only (no skill):
 
 ```bash
+<<<<<<< HEAD
 npx -y @mvanhorn/printing-press-library install exact-online-activities --cli-only
 ```
 
@@ -30,6 +42,11 @@ To constrain the skill install to one or more specific agents (repeatable — ag
 npx -y @mvanhorn/printing-press-library install exact-online-activities --agent claude-code
 npx -y @mvanhorn/printing-press-library install exact-online-activities --agent claude-code --agent codex
 ```
+=======
+npx -y @mvanhorn/printing-press install exact-online-activities --cli-only
+```
+
+>>>>>>> origin/main
 
 ### Without Node
 
@@ -42,6 +59,7 @@ Download a pre-built binary for your platform from the [latest release](https://
 <!-- pp-hermes-install-anchor -->
 ## Install for Hermes
 
+<<<<<<< HEAD
 Install the CLI binary first. The installer writes binaries to a per-user managed bin directory by default: `$HOME/.local/bin` on macOS/Linux and `%LOCALAPPDATA%\Programs\PrintingPress\bin` on Windows.
 
 ```bash
@@ -50,6 +68,8 @@ npx -y @mvanhorn/printing-press-library install exact-online-activities --cli-on
 
 Then install the focused Hermes skill.
 
+=======
+>>>>>>> origin/main
 From the Hermes CLI:
 
 ```bash
@@ -62,6 +82,7 @@ Inside a Hermes chat session:
 /skills install mvanhorn/printing-press-library/cli-skills/pp-exact-online-activities --force
 ```
 
+<<<<<<< HEAD
 Restart the Hermes session or gateway if the newly installed skill is not visible immediately.
 
 ## Install for OpenClaw
@@ -110,6 +131,16 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 
 </details>
 
+=======
+## Install for OpenClaw
+
+Tell your OpenClaw agent (copy this):
+
+```
+Install the pp-exact-online-activities skill from https://github.com/mvanhorn/printing-press-library/tree/main/cli-skills/pp-exact-online-activities. The skill defines how its required CLI can be installed.
+```
+
+>>>>>>> origin/main
 ## Quick Start
 
 ### 1. Install
@@ -148,6 +179,7 @@ exact-online-activities-pp-cli activities annual-statements-get mock-value
 
 Run `exact-online-activities-pp-cli --help` for the full command reference and flag list.
 
+<<<<<<< HEAD
 ## Paths & environment variables
 
 This CLI separates local files into four path kinds:
@@ -197,6 +229,8 @@ Relocation is one-way. Unsetting `EXACT_ONLINE_ACTIVITIES_HOME` does not move fi
 
 Existing installs keep working because the platform-default rung matches the legacy layout. On the first auth write, stored secrets leave `config.toml` and are consolidated into `credentials.toml` under the data directory. Run `exact-online-activities-pp-cli doctor --fail-on warn` to check path and credential-location warnings in automation.
 
+=======
+>>>>>>> origin/main
 ## Commands
 
 ### activities
@@ -285,6 +319,7 @@ Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx
 Scope: Organization workflow
 
 
+<<<<<<< HEAD
 ### Self-learning loop
 
 This CLI caches per-question discovery so repeat queries skip the walk and structurally similar queries get answered via entity substitution. The loop also self-captures: every invocation is journaled locally, and failed-flag corrections plus fresh teaches surface as candidates on the next `recall` for confirm/reject judgment. Agents call `recall` before discovery and fire `teach &` after answering. See the `## Automatic learning` section in `SKILL.md` for the full protocol.
@@ -302,6 +337,8 @@ Pass `--no-learn` or set `EXACT_ONLINE_ACTIVITIES_NO_LEARN=true` to disable the 
 
 The local store's schema version stamp is one-way: once this version of `exact-online-activities-pp-cli` opens the database, older binaries refuse it with a version error — upgrade the binary rather than downgrading.
 
+=======
+>>>>>>> origin/main
 ## Output Formats
 
 ```bash
@@ -310,8 +347,14 @@ exact-online-activities-pp-cli activities annual-statements-get mock-value
 
 # JSON for scripting and agents
 exact-online-activities-pp-cli activities annual-statements-get mock-value --json
+<<<<<<< HEAD
 # Filter to specific fields by name
 exact-online-activities-pp-cli activities annual-statements-get mock-value --json --select <field>[,<field>...]
+=======
+
+# Filter to specific fields
+exact-online-activities-pp-cli activities annual-statements-get mock-value --json --select id,name,status
+>>>>>>> origin/main
 
 # Dry run — show the request without sending
 exact-online-activities-pp-cli activities annual-statements-get mock-value --dry-run
@@ -326,16 +369,89 @@ This CLI is designed for AI agent consumption:
 
 - **Non-interactive** - never prompts, every input is a flag
 - **Pipeable** - `--json` output to stdout, errors to stderr
+<<<<<<< HEAD
 - **Filterable** - `--select <field>[,<field>...]` returns only fields you need
 - **Previewable** - `--dry-run` shows the request without sending
 - **Explicit retries** - add `--idempotent` to create retries when a no-op success is acceptable
 - **Explicit confirmation** - `--agent` does not imply `--yes`; pass `--yes` separately only after the target, arguments, and side effects are clear
+=======
+- **Filterable** - `--select id,name` returns only fields you need
+- **Previewable** - `--dry-run` shows the request without sending
+- **Explicit retries** - add `--idempotent` to create retries when a no-op success is acceptable
+- **Confirmable** - `--yes` for explicit confirmation of destructive actions
+>>>>>>> origin/main
 - **Piped input** - write commands can accept structured input when their help lists `--stdin`
 - **Offline-friendly** - sync/search commands can use the local SQLite store when available
 - **Agent-safe by default** - no colors or formatting unless `--human-friendly` is set
 
 Exit codes: `0` success, `2` usage error, `3` not found, `4` auth error, `5` API error, `7` rate limited, `10` config error.
 
+<<<<<<< HEAD
+=======
+## Use with Claude Code
+
+Install the focused skill — it auto-installs the CLI on first invocation:
+
+```bash
+npx skills add mvanhorn/printing-press-library/cli-skills/pp-exact-online-activities -g
+```
+
+Then invoke `/pp-exact-online-activities <query>` in Claude Code. The skill is the most efficient path — Claude Code drives the CLI directly without an MCP server in the middle.
+
+<details>
+<summary>Use as an MCP server in Claude Code (advanced)</summary>
+
+If you'd rather register this CLI as an MCP server in Claude Code, install the MCP binary first:
+
+
+Install the MCP binary from this CLI's published public-library entry or pre-built release.
+
+Then register it:
+
+```bash
+claude mcp add exact-online-activities exact-online-activities-pp-mcp -e EXACT_ONLINE_ACTIVITIES_OAUTH2=<your-token>
+```
+
+</details>
+
+## Use with Claude Desktop
+
+This CLI ships an [MCPB](https://github.com/modelcontextprotocol/mcpb) bundle — Claude Desktop's standard format for one-click MCP extension installs (no JSON config required).
+
+To install:
+
+1. Download the `.mcpb` for your platform from the [latest release](https://github.com/mvanhorn/printing-press-library/releases/tag/exact-online-activities-current).
+2. Double-click the `.mcpb` file. Claude Desktop opens and walks you through the install.
+3. Fill in `EXACT_ONLINE_ACTIVITIES_OAUTH2` when Claude Desktop prompts you.
+
+Requires Claude Desktop 1.0.0 or later. Pre-built bundles ship for macOS Apple Silicon (`darwin-arm64`) and Windows (`amd64`, `arm64`); for other platforms, use the manual config below.
+
+<details>
+<summary>Manual JSON config (advanced)</summary>
+
+If you can't use the MCPB bundle (older Claude Desktop, unsupported platform), install the MCP binary and configure it manually.
+
+
+Install the MCP binary from this CLI's published public-library entry or pre-built release.
+
+Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "exact-online-activities": {
+      "command": "exact-online-activities-pp-mcp",
+      "env": {
+        "EXACT_ONLINE_ACTIVITIES_OAUTH2": "<your-key>"
+      }
+    }
+  }
+}
+```
+
+</details>
+
+>>>>>>> origin/main
 ## Health Check
 
 ```bash
@@ -346,7 +462,11 @@ Verifies configuration, credentials, and connectivity to the API.
 
 ## Configuration
 
+<<<<<<< HEAD
 Run `exact-online-activities-pp-cli doctor` to see the resolved config, data, state, and cache directories. The platform-default config path is `~/.config/exact-online-activities-pp-cli/config.toml`; `--home`, `EXACT_ONLINE_ACTIVITIES_HOME`, and per-kind env vars can relocate it.
+=======
+Config file: `~/.config/exact-online-activities-pp-cli/config.toml`
+>>>>>>> origin/main
 
 Static request headers can be configured under `headers`; per-command header overrides take precedence.
 
@@ -356,10 +476,13 @@ Environment variables:
 | --- | --- | --- | --- |
 | `EXACT_ONLINE_ACTIVITIES_OAUTH2` | per_call | Yes | Set to your API credential. |
 
+<<<<<<< HEAD
 ### agentcookie (optional)
 
 If you use agentcookie to sync secrets across machines, this CLI auto-adopts agentcookie-managed credentials with no extra setup. When the daemon writes to this CLI's config, `exact-online-activities-pp-cli doctor` reports `agentcookie: detected` and `auth-status` labels the source as `agentcookie`. Skip this section if you don't use agentcookie - the CLI works the same as any other.
 
+=======
+>>>>>>> origin/main
 ## Troubleshooting
 **Authentication errors (exit code 4)**
 - Run `exact-online-activities-pp-cli doctor` to check credentials

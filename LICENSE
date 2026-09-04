@@ -176,7 +176,11 @@
 
    END OF TERMS AND CONDITIONS
 
+<<<<<<< HEAD
    Copyright 2026 Hermes CLI Agent and contributors
+=======
+   Copyright 2026 pimmetjeoss
+>>>>>>> origin/main
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

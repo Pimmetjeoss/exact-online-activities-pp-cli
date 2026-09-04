@@ -10,6 +10,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+<<<<<<< HEAD
 func init() {
 	registerNovelCommand(func(root *cobra.Command, flags *rootFlags) {
 		var parent *cobra.Command
@@ -30,6 +31,8 @@ func init() {
 	})
 }
 
+=======
+>>>>>>> origin/main
 type activitiesODataFlags struct {
 	filter       string
 	selectClause string
@@ -108,7 +111,10 @@ func activitiesResourceByName(name string) (activitiesResourceInfo, bool) {
 	return activitiesResourceInfo{}, false
 }
 
+<<<<<<< HEAD
 // pp:data-source local
+=======
+>>>>>>> origin/main
 func newActivitiesResourcesCmd(flags *rootFlags) *cobra.Command {
 	var method string
 	cmd := &cobra.Command{
@@ -138,7 +144,10 @@ func newActivitiesResourcesCmd(flags *rootFlags) *cobra.Command {
 	return cmd
 }
 
+<<<<<<< HEAD
 // pp:data-source local
+=======
+>>>>>>> origin/main
 func newActivitiesDocsCmd(flags *rootFlags) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:         "docs <resource>",
@@ -160,7 +169,10 @@ func newActivitiesDocsCmd(flags *rootFlags) *cobra.Command {
 	return cmd
 }
 
+<<<<<<< HEAD
 // pp:data-source live
+=======
+>>>>>>> origin/main
 func newActivitiesOverviewCmd(flags *rootFlags) *cobra.Command {
 	var q activitiesODataFlags
 	cmd := &cobra.Command{
@@ -179,7 +191,10 @@ func newActivitiesOverviewCmd(flags *rootFlags) *cobra.Command {
 	return cmd
 }
 
+<<<<<<< HEAD
 // pp:data-source live
+=======
+>>>>>>> origin/main
 func newActivitiesOpenItemsCmd(flags *rootFlags) *cobra.Command {
 	var assignedTo string
 	var q activitiesODataFlags
@@ -204,7 +219,10 @@ func newActivitiesOpenItemsCmd(flags *rootFlags) *cobra.Command {
 	return cmd
 }
 
+<<<<<<< HEAD
 // pp:data-source live
+=======
+>>>>>>> origin/main
 func newActivitiesByAccountCmd(flags *rootFlags) *cobra.Command {
 	var accountID string
 	var q activitiesODataFlags
@@ -238,9 +256,15 @@ func activitiesMultiGet(cmd *cobra.Command, flags *rootFlags, division string, r
 	for _, name := range resourceNames {
 		r, _ := activitiesResourceByName(name)
 		path := replacePathParam(r.Path, "division", division)
+<<<<<<< HEAD
 		data, err := c.Get(cmd.Context(), path, params)
 		if err != nil {
 			return classifyAPIError(cmd.OutOrStdout(), err, flags)
+=======
+		data, err := c.Get(path, params)
+		if err != nil {
+			return classifyAPIError(err, flags)
+>>>>>>> origin/main
 		}
 		var parsed any
 		if json.Unmarshal(data, &parsed) != nil {

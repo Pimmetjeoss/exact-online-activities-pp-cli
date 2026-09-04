@@ -18,7 +18,11 @@ exact-online-activities-pp-cli which "<capability>" --json
 exact-online-activities-pp-cli <command> --help
 ```
 
+<<<<<<< HEAD
 Add `--agent` to command invocations for JSON, compact output, non-interactive defaults, and no color:
+=======
+Add `--agent` to command invocations for JSON, compact output, non-interactive defaults, no color, and confirmation-safe scripting:
+>>>>>>> origin/main
 
 ```bash
 exact-online-activities-pp-cli <command> --agent
@@ -31,6 +35,7 @@ exact-online-activities-pp-cli <command> --help
 exact-online-activities-pp-cli <command> --dry-run --agent
 ```
 
+<<<<<<< HEAD
 When a command requires confirmation, pass `--yes` explicitly only after the target, arguments, and side effects are clear. `--agent` does not imply `--yes`.
 
 ## Novel Command Data Sources
@@ -88,3 +93,43 @@ For install, auth, examples, and longer product guidance, read `README.md` and `
 This directory is **generated output** -- a fresh print can overwrite the whole tree, so ad-hoc hand-edits don't survive on their own. If you modify the generated code, record each change under `.printing-press-patches/` (parallel to `.printing-press.json`). Regen and publish-validate read those records and fail closed when a recorded file or call site is gone, so a dropped customization cannot ship as if it were still applied.
 
 The entry shape, and the altitude to write it at -- a durable reprint-guard, not a changelog -- live in the public library's `AGENTS.md`, which is the single source of truth; this guide intentionally doesn't duplicate them.
+=======
+Use `--yes --no-input` only after the target, arguments, and side effects are clear.
+
+For install, auth, examples, and longer product guidance, read `README.md` and `SKILL.md`. This file intentionally stays small so repo-local agents get invariant local guidance without duplicating the generated docs.
+
+## Local Customizations
+
+If you modify this CLI beyond what the generator produced, record each customization so it isn't lost on the next regen and is visible to the next reader.
+
+1. **Mark every changed site** in source with a comment summarizing the deviation:
+
+    ```
+    // PATCH: <one-line summary>
+    ```
+
+    Include an upstream reference inline when there is one (e.g. `// PATCH(upstream cli-printing-press#<issue>): ...`). `grep -rn 'PATCH' .` from this directory then surfaces every customization.
+
+2. **Catalog the change** in a `.printing-press-patches.json` at this CLI's root (parallel to `.printing-press.json`). Minimum shape:
+
+    ```json
+    {
+      "schema_version": 1,
+      "applied_at": "YYYY-MM-DD",
+      "base_run_id": "<copy from .printing-press.json>",
+      "base_printing_press_version": "<copy from .printing-press.json>",
+      "patches": [
+        {
+          "id": "short-identifier",
+          "summary": "What changed (one sentence).",
+          "reason": "Why this customization was needed (one or two sentences).",
+          "files": ["internal/cli/foo.go"],
+          "validated_outcome": "Optional: non-obvious test result that confirms the fix.",
+          "upstream_issue": "Optional: https://github.com/mvanhorn/cli-printing-press/issues/<n>"
+        }
+      ]
+    }
+    ```
+
+This file is an **index of customizations**, not a second copy of the diff. Diffs live in `git`; code lives in the source files; the inline `// PATCH:` comment carries the local semantics. Keep `summary` and `reason` short -- if you find yourself writing tables of field renames or code transformations, that detail belongs in the source comment or commit message, not here.
+>>>>>>> origin/main
