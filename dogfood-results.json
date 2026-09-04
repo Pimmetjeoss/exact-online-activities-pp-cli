@@ -1,14 +1,8 @@
 {
-<<<<<<< HEAD
   "dir": "\u003ccli-dir\u003e/exact-online-activities-pp-cli",
   "spec_path": "\u003ccli-dir\u003e/spec.yaml",
   "spec_source": "bundled",
   "verdict": "WARN",
-=======
-  "dir": "\u003ccli-dir\u003e",
-  "spec_path": "\u003crunstate\u003e/exact-online-activities-openapi.yaml",
-  "verdict": "PASS",
->>>>>>> origin/main
   "path_check": {
     "tested": 9,
     "valid": 9,
@@ -25,7 +19,6 @@
     "pass": true,
     "detail": "browser-session auth not required"
   },
-<<<<<<< HEAD
   "oauth_scope_coverage_check": {
     "checked": 16,
     "covered": 16,
@@ -52,21 +45,6 @@
     "sync_file_emitted": false,
     "sync_resources_present": false,
     "detail": "sync Upsert calls not found; search methods not found; 4 domain tables found"
-=======
-  "dead_flags": {
-    "total": 18,
-    "dead": 0
-  },
-  "dead_functions": {
-    "total": 57,
-    "dead": 0
-  },
-  "pipeline_check": {
-    "sync_calls_domain": true,
-    "search_calls_domain": false,
-    "domain_tables": 1,
-    "detail": "sync uses domain-specific Upsert methods; search methods not found; 1 domain tables found"
->>>>>>> origin/main
   },
   "example_check": {
     "tested": 10,
@@ -76,13 +54,8 @@
   },
   "wiring_check": {
     "command_tree": {
-<<<<<<< HEAD
       "defined": 69,
       "registered": 69
-=======
-      "defined": 46,
-      "registered": 46
->>>>>>> origin/main
     },
     "config_consistency": {
       "consistent": true
@@ -110,7 +83,6 @@
     "skipped": true
   },
   "source_client_check": {
-<<<<<<< HEAD
     "checked": 9
   },
   "print_json_filtered_check": {
@@ -131,19 +103,4 @@
     "1 dead helper functions found",
     "sync uses generic Upsert only"
   ]
-=======
-    "checked": 0,
-    "skipped": true
-  },
-  "print_json_filtered_check": {
-    "checked": 33
-  },
-  "test_presence": {
-    "checked": 0
-  },
-  "naming_check": {
-    "checked": 33
-  },
-  "issues": null
->>>>>>> origin/main
 }

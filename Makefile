@@ -1,14 +1,9 @@
 .PHONY: build test lint install clean
 
-<<<<<<< HEAD
 BIN_EXT := $(if $(filter windows,$(shell go env GOOS)),.exe,)
 
 build:
 	go build -o bin/exact-online-activities-pp-cli$(BIN_EXT) ./cmd/exact-online-activities-pp-cli
-=======
-build:
-	go build -o bin/exact-online-activities-pp-cli ./cmd/exact-online-activities-pp-cli
->>>>>>> origin/main
 
 test:
 	go test ./...
@@ -23,11 +18,7 @@ clean:
 	rm -rf bin/
 
 build-mcp:
-<<<<<<< HEAD
 	go build -o bin/exact-online-activities-pp-mcp$(BIN_EXT) ./cmd/exact-online-activities-pp-mcp
-=======
-	go build -o bin/exact-online-activities-pp-mcp ./cmd/exact-online-activities-pp-mcp
->>>>>>> origin/main
 
 install-mcp:
 	go install ./cmd/exact-online-activities-pp-mcp

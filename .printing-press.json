@@ -1,12 +1,7 @@
 {
   "schema_version": 1,
-<<<<<<< HEAD
   "generated_at": "2026-09-03T19:54:25Z",
   "printing_press_version": "4.31.1",
-=======
-  "generated_at": "2026-07-07T13:18:17.142451282Z",
-  "printing_press_version": "4.5.2",
->>>>>>> origin/main
   "api_name": "exact-online-activities",
   "display_name": "Exact Online Activities",
   "cli_name": "exact-online-activities-pp-cli",
@@ -24,7 +19,6 @@
   "auth_type": "bearer_token",
   "auth_env_vars": [
     "EXACT_ONLINE_ACTIVITIES_OAUTH2"
-<<<<<<< HEAD
   ],
   "verify": {
     "mode": "mock",
@@ -46,7 +40,3 @@
     ]
   }
 }
-=======
-  ]
-}
->>>>>>> origin/main

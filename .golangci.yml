@@ -5,13 +5,10 @@ linters:
     - ineffassign
     - staticcheck
     - unused
-<<<<<<< HEAD
     - bodyclose
     - noctx
     - rowserrcheck
     - sqlclosecheck
-=======
->>>>>>> origin/main
 
 formatters:
   enable:

@@ -1,12 +1,7 @@
 ---
 name: pp-exact-online-activities
-<<<<<<< HEAD
 description: "Printing Press CLI for Exact Online Activities. Activities-only Exact Online REST/OData API surface generated from the official Exact Online REST API documentation."
 author: "Hermes CLI Agent"
-=======
-description: "Printing Press CLI for Exact Online Activities. Activities-only Exact Online REST/OData API surface generated from the official Exact Online REST API documentation...."
-author: "Pimmetjeoss"
->>>>>>> origin/main
 license: "Apache-2.0"
 argument-hint: "<command> [args] | install cli|mcp"
 allowed-tools: "Read Bash"
@@ -23,7 +18,6 @@ metadata:
 
 This skill drives the `exact-online-activities-pp-cli` binary. **You must verify the CLI is installed before invoking any command from this skill.** If it is missing, install it first:
 
-<<<<<<< HEAD
 1. Install via the Printing Press installer. It defaults binaries to `$HOME/.local/bin` on macOS/Linux and `%LOCALAPPDATA%\Programs\PrintingPress\bin` on Windows:
    ```bash
    npx -y @mvanhorn/printing-press-library install exact-online-activities --cli-only
@@ -34,18 +28,6 @@ This skill drives the `exact-online-activities-pp-cli` binary. **You must verify
 If the `npx` install fails before this CLI has a public-library category, install Node or use the category-specific Go fallback after publish.
 
 If `--version` reports "command not found" after install, the runtime cannot see the binary directory on `$PATH`. Do not proceed with skill commands until verification succeeds.
-=======
-1. Install via the Printing Press installer:
-   ```bash
-   npx -y @mvanhorn/printing-press install exact-online-activities --cli-only
-   ```
-2. Verify: `exact-online-activities-pp-cli --version`
-3. Ensure `$GOPATH/bin` (or `$HOME/go/bin`) is on `$PATH`.
-
-If the `npx` install fails before this CLI has a public-library category, install Node or use the category-specific Go fallback after publish.
-
-If `--version` reports "command not found" after install, the install step did not put the binary on `$PATH`. Do not proceed with skill commands until verification succeeds.
->>>>>>> origin/main
 
 Activities-only Exact Online REST/OData API surface generated from the official Exact Online REST API documentation. Covers the Activities service resources and all documented methods. OAuth bearer token required.
 
@@ -53,7 +35,6 @@ Activities-only Exact Online REST/OData API surface generated from the official 
 
 **activities** — Manage activities
 
-<<<<<<< HEAD
 - `exact-online-activities-pp-cli activities annual-statements-get` — The date indicating by when the action has to be taken; The status of the Annual Statement request.
 - `exact-online-activities-pp-cli activities annual-statements-post` — The date indicating by when the action has to be taken; The status of the Annual Statement request.
 - `exact-online-activities-pp-cli activities annual-statements-put` — The date indicating by when the action has to be taken; The status of the Annual Statement request.
@@ -70,24 +51,6 @@ Activities-only Exact Online REST/OData API surface generated from the official 
 - `exact-online-activities-pp-cli activities service-requests-post` — The account that is related to the service request; The name of the account. Official docs: https://start.exactonline.
 - `exact-online-activities-pp-cli activities tasks-get` — The account that is related to the task; The name of the account. Official docs: https://start.exactonline.
 - `exact-online-activities-pp-cli activities tasks-post` — The account that is related to the task; The name of the account. Official docs: https://start.exactonline.
-=======
-- `exact-online-activities-pp-cli activities annual-statements-get` — The date indicating by when the action has to be taken; The status of the Annual Statement request. Official docs:...
-- `exact-online-activities-pp-cli activities annual-statements-post` — The date indicating by when the action has to be taken; The status of the Annual Statement request. Official docs:...
-- `exact-online-activities-pp-cli activities annual-statements-put` — The date indicating by when the action has to be taken; The status of the Annual Statement request. Official docs:...
-- `exact-online-activities-pp-cli activities communication-notes-get` — The account that is related to the communication note; The name of the account. Official docs:...
-- `exact-online-activities-pp-cli activities communication-notes-post` — The account that is related to the communication note; The name of the account. Official docs:...
-- `exact-online-activities-pp-cli activities complaints-get` — The account that is related to the complaint; The name of the account. Official docs:...
-- `exact-online-activities-pp-cli activities complaints-post` — The account that is related to the complaint; The name of the account. Official docs:...
-- `exact-online-activities-pp-cli activities events-get` — The account that is related to the event; The name of the account. Official docs:...
-- `exact-online-activities-pp-cli activities events-post` — The account that is related to the event; The name of the account. Official docs:...
-- `exact-online-activities-pp-cli activities fiscals-get` — The date indicating by when the action has to be taken; The user that the request is assigned to. Official docs:...
-- `exact-online-activities-pp-cli activities fiscals-post` — The date indicating by when the action has to be taken; The user that the request is assigned to. Official docs:...
-- `exact-online-activities-pp-cli activities fiscals-put` — The date indicating by when the action has to be taken; The user that the request is assigned to. Official docs:...
-- `exact-online-activities-pp-cli activities service-requests-get` — The account that is related to the service request; The name of the account. Official docs:...
-- `exact-online-activities-pp-cli activities service-requests-post` — The account that is related to the service request; The name of the account. Official docs:...
-- `exact-online-activities-pp-cli activities tasks-get` — The account that is related to the task; The name of the account. Official docs:...
-- `exact-online-activities-pp-cli activities tasks-post` — The account that is related to the task; The name of the account. Official docs:...
->>>>>>> origin/main
 
 
 ### Finding the right command
@@ -114,29 +77,18 @@ Run `exact-online-activities-pp-cli doctor` to verify setup.
 
 ## Agent Mode
 
-<<<<<<< HEAD
 Add `--agent` to any command. Expands to: `--json --compact --no-input --no-color`.
-=======
-Add `--agent` to any command. Expands to: `--json --compact --no-input --no-color --yes`.
->>>>>>> origin/main
 
 - **Pipeable** — JSON on stdout, errors on stderr
 - **Filterable** — `--select` keeps a subset of fields. Dotted paths descend into nested structures; arrays traverse element-wise. Critical for keeping context small on verbose APIs:
 
   ```bash
-<<<<<<< HEAD
   exact-online-activities-pp-cli activities annual-statements-get mock-value --agent
-=======
-  exact-online-activities-pp-cli activities annual-statements-get mock-value --agent --select id,name,status
->>>>>>> origin/main
   ```
 - **Previewable** — `--dry-run` shows the request without sending
 - **Offline-friendly** — sync/search commands can use the local SQLite store when available
 - **Non-interactive** — never prompts, every input is a flag
-<<<<<<< HEAD
 - **Explicit confirmation** — `--agent` does not imply `--yes`; pass `--yes` separately only after the target, arguments, and side effects are clear
-=======
->>>>>>> origin/main
 - **Explicit retries** — use `--idempotent` only when an already-existing create should count as success
 
 ### Response envelope
@@ -150,7 +102,6 @@ Commands that read from the local store or the API wrap output in a provenance e
 }
 ```
 
-<<<<<<< HEAD
 Parse `.results` for data and `.meta.source` to know whether it's live or local. A human-readable `N results (live)` summary is printed to stderr only when stdout is a terminal AND no machine-format flag (`--json`, `--csv`, `--compact`, `--quiet`, `--plain`, `--select`) is set — piped/agent consumers and explicit-format runs get pure JSON on stdout.
 
 ## Paths and state
@@ -370,9 +321,6 @@ If a correction is only meaningful with user-specific context, it belongs in a p
 
 - `--no-learn` on a single command short-circuits both `recall` and the `teach` write path. Use for deterministic agent flows or tests that must not be affected by accumulated learnings.
 - `EXACT_ONLINE_ACTIVITIES_NO_LEARN=true` in the environment globally disables the pipeline.
-=======
-Parse `.results` for data and `.meta.source` to know whether it's live or local. A human-readable `N results (live)` summary is printed to stderr only when stdout is a terminal — piped/agent consumers get pure JSON on stdout.
->>>>>>> origin/main
 
 ## Agent Feedback
 
@@ -384,11 +332,7 @@ exact-online-activities-pp-cli feedback --stdin < notes.txt
 exact-online-activities-pp-cli feedback list --json --limit 10
 ```
 
-<<<<<<< HEAD
 Entries are stored locally as `feedback.jsonl` under the resolved data dir. They are never POSTed unless `EXACT_ONLINE_ACTIVITIES_FEEDBACK_ENDPOINT` is set AND either `--send` is passed or `EXACT_ONLINE_ACTIVITIES_FEEDBACK_AUTO_SEND=true`. Default behavior is local-only.
-=======
-Entries are stored locally at `~/.exact-online-activities-pp-cli/feedback.jsonl`. They are never POSTed unless `EXACT_ONLINE_ACTIVITIES_FEEDBACK_ENDPOINT` is set AND either `--send` is passed or `EXACT_ONLINE_ACTIVITIES_FEEDBACK_AUTO_SEND=true`. Default behavior is local-only.
->>>>>>> origin/main
 
 Write what *surprised* you, not a bug report. Short, specific, one line: that is the part that compounds.
 
@@ -406,11 +350,7 @@ Unknown schemes are refused with a structured error naming the supported set. We
 
 ## Named Profiles
 
-<<<<<<< HEAD
 A profile is a saved set of flag values, reused across invocations. Use it when a scheduled or recurring agent reuses the same saved flags while providing different input each run.
-=======
-A profile is a saved set of flag values, reused across invocations. Use it when a scheduled agent calls the same command every run with the same configuration - HeyGen's "Beacon" pattern.
->>>>>>> origin/main
 
 ```
 exact-online-activities-pp-cli profile save briefing --json

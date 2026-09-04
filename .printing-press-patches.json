@@ -1,14 +1,8 @@
 {
   "schema_version": 1,
-<<<<<<< HEAD
   "applied_at": "2026-09-03",
   "base_run_id": "2026-07-07T13:18:17.142451282Z",
   "base_printing_press_version": "4.31.1",
-=======
-  "applied_at": "2026-07-07",
-  "base_run_id": "2026-07-07T13:18:17.142451282Z",
-  "base_printing_press_version": "4.5.2",
->>>>>>> origin/main
   "patches": [
     {
       "id": "activities-workflows",
@@ -28,7 +22,6 @@
         "internal/cli/helpers.go"
       ],
       "validated_outcome": "go test ./... and printing-press dogfood pass without dead-function warnings."
-<<<<<<< HEAD
     },
     {
       "id": "pp4311-signature-migration",
@@ -59,8 +52,3 @@
     }
   ]
 }
-=======
-    }
-  ]
-}
->>>>>>> origin/main

@@ -23,11 +23,7 @@ builds:
     env:
       - CGO_ENABLED=0
     ldflags:
-<<<<<<< HEAD
       - -s -w -X main.version={{ .Version }}
-=======
-      - -s -w
->>>>>>> origin/main
     targets:
       - darwin_amd64
       - darwin_arm64
@@ -46,17 +42,10 @@ checksum:
 brews:
   - name: exact-online-activities-pp-cli
     repository:
-<<<<<<< HEAD
       owner: 
       name: homebrew-tap
     homepage: "https://github.com//exact-online-activities-pp-cli"
     description: "Activities-only Exact Online REST/OData API surface generated from the official Exact Online REST API documentation."
-=======
-      owner: pimmetjeoss
-      name: homebrew-tap
-    homepage: "https://github.com/pimmetjeoss/exact-online-activities-pp-cli"
-    description: "Activities-only Exact Online REST/OData API surface generated from the official Exact Online REST API documentation...."
->>>>>>> origin/main
     install: |
       bin.install "exact-online-activities-pp-cli"
       bin.install "exact-online-activities-pp-mcp"
